@@ -2,12 +2,11 @@
 /**
  * main - Entry Point.
  *
- * Description: Prints the size of various types 
- * on the computer it is compiled and run on.
+ * Description: Prints the size of various types.
  *
  * Return: Always 0 (Success)
  */
-int main (void)
+int main(void)
 {
 	/*prints size of various types*/
 	printf("Size of a char: %lu byte(s)\n", sizeof(char));
