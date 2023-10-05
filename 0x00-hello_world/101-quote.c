@@ -11,8 +11,9 @@
  */
 int main(void)
 {
-	/*printing characters using char pointer message*/
+	/*printing characters using char pointer msg*/
 	const char *goo = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+
 	write(2, goo, strlen(goo));
-	return 1;
+	return (1);
 }
