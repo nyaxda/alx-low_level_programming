@@ -13,6 +13,6 @@ int main(void)
 {
 	/*printing characters using char pointer message*/
 	const char *goo = "and that piece of art is useful\" - Dora Korpar, 2015-10-19"
-	write(2, message, strlen(goo);
+	write(2, message, strlen(goo));
 	return 1;
 }
