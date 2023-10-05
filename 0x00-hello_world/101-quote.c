@@ -12,7 +12,7 @@
 int main(void)
 {
 	/*printing characters using char pointer msg*/
-	const char *exact = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n"
+	const char *exact = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 	write (2, exact, strlen(exact));
 	return (1);
 }
