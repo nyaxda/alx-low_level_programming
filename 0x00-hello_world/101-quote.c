@@ -13,8 +13,8 @@ int main(void)
 {
 	/*printing characters using char pointer msg*/
 	const char *part1 = "and that piece of art is useful\"";
-	const char *part2= " - Dora Korpar, 2015-10-19\n";
-	
+	const char *part2 = " - Dora Korpar, 2015-10-19\n";
+
 	/*file descriptor*/
 	write(2, part1, strlen(part1));
 	write(2, part2, strlen(part2));
