@@ -70,5 +70,5 @@ int main(void)
 	putchar('-');
 	putchar('1');
 	putchar('9');
-
+	return(1);
 }
