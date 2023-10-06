@@ -13,7 +13,7 @@
 int main(void)
 {
 	char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
-	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int i;
 	int a = strlen(alphabet);
 
