@@ -15,10 +15,11 @@ int main(void)
 	int i;
 	int a = strlen(alphabet);
 
-	for (i = a; i >= 0; i--)
+	for (i = (a - 1); i = 0; i--)
 	{
 		putchar(alphabet[i]);
 	}
+	putchar('\n');
 
 	return (0);
 }
