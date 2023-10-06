@@ -17,7 +17,7 @@ int main(void)
 
 	for (i=0; i < a; i++)
 	{
-		putchar("%c\n",alphabet[i]);
+		putchar(alphabet[i]);
 	}
 
 	return (0);
