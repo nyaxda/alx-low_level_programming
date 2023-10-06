@@ -20,7 +20,9 @@ int main(void)
 		putchar(32);
 	}
 	putchar(57);
-	write(1,"\n",1);
+	/*Flush the buffer to ensure putchars are displayed first before write*/
+	fflush(stdout);
+	write(1, "\n", 1);
 
 	return (0);
 }
