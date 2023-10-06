@@ -12,13 +12,13 @@ int main(void)
 {
 	int i;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 9; i++)
 	{
 		putchar(48 + i);
 		putchar(44);
 		putchar(32);
 	}
-	putchar(8);
+	putchar(57);
 
 	return (0);
 }
