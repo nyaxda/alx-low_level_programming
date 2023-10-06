@@ -21,7 +21,7 @@ int main(void)
 	{
 		putchar(alphabet[i]);
 	}
-	for ( i = 0; i < a; i++);
+	for ( i = 0; i < a; i++)
 	{
 		putchar(alpha[i]);
 	}
