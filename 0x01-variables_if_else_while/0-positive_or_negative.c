@@ -5,7 +5,7 @@
 /**
  * main - Entry Point.
  *
- * Description: print nature of the number stored in the variable n 
+ *Description: print nature of the number stored in the variable n
  *
  * Return: Always 0 (Success)
  */
