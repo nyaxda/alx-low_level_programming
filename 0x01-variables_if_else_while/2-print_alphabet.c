@@ -13,7 +13,7 @@ int main(void)
 {
 	char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 	int i;
-	int a = strlen(alphabet)
+	int a = strlen(alphabet);
 
 	for (i=0; i < a; i++)
 	{
