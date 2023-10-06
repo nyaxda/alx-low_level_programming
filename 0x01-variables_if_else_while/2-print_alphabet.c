@@ -15,7 +15,7 @@ int main(void)
 	int i;
 	int a = strlen(alphabet);
 
-	for (i=0; i < a; i++)
+	for (i = 0; i < a; i++)
 	{
 		putchar(alphabet[i]);
 	}
