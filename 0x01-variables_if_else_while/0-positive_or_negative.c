@@ -1,8 +1,14 @@
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
+#include <stdio.h>
 
-/* betty style doc for function main goes there */
+/**
+ * main - Entry Point.
+ *
+ * Description: print nature of the number stored in the variable n 
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int n;
