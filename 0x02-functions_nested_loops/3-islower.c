@@ -9,7 +9,8 @@
  * Return: Always 0 (Success)
  */
 
-int _islower(int c)/*c is the ASCII character*/
+/*'c' is the ASCII character*/
+int _islower(int c)
 {
 	if (c > 96 && c < 123)
 	{
