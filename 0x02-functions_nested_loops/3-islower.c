@@ -4,7 +4,7 @@
 /**
  * _islower - Entry Point.
  *
- * Description: Function _islower checks for lowercase ASCII character c.
+ * Description: Function _islower checks for lowercase ASCII member  'c'.
  *
  * Return: Always 0 (Success)
  */
