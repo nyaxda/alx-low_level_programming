@@ -2,9 +2,9 @@
 #include "main.h"
 
 /**
- * main - Entry Point.
+ * print_alphabet - Entry Point.
  *
- * Description: Prints alphabet in lowercase, then newline
+ * Description: Function print_alphabet printing lowercase letters/
  *
  * Return: Always 0 (Success)
  */
