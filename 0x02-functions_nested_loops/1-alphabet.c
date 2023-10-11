@@ -8,9 +8,11 @@
  *
  * Return: Always 0 (Success)
  */
+/*Function definition*/
 void print_alphabet(void)
 {
 	char beg = 'a';
+
 	while (beg <= 'z')
 	{
 		_putchar(beg);
