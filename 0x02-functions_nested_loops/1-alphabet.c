@@ -8,8 +8,8 @@
  *
  * Return: Always 0 (Success)
  */
-/*Function definition*/
-void print_alphabet(void)
+
+void print_alphabet(void) /*Function definition*/
 {
 	char beg = 'a';
 
