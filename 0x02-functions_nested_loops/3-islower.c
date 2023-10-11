@@ -4,12 +4,12 @@
 /**
  * _islower - Entry Point.
  *
- * Description: Function _islower checks for lowercase character c.
+ * Description: Function _islower checks for lowercase ASCII character c.
  *
  * Return: Always 0 (Success)
  */
 
-int _islower(int c)
+int _islower(int c)/*c is the ASCII character*/
 {
 	if (c > 96 && c < 123)
 	{
