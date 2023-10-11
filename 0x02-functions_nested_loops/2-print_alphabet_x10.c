@@ -16,7 +16,7 @@ void print_alphabet_x10(void) /*Function definition*/
 	while (i < 10)
 	{
 		char beg = 'a';
-		
+
 		while (beg <= 'z')
 		{
 			_putchar(beg);
