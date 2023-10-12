@@ -11,10 +11,7 @@
  * Return: The sum of two integers
  */
 
-int a;
-int b;
-
-int add(a, b)
+int add(int a, int b)
 {
 	return (a + b);
 }
