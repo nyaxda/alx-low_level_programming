@@ -17,21 +17,29 @@ void print_to_98(int n) /*Function definition*/
 	{
 		for (i = n; i < 98; i++)
 		{
-			_putchar('0' + i);
-			_putchar(',');
-			_putchar(' ');
+			_putchar('0' + i/100);
+			_putchar('0' + i/10%10);
+			_putchar('0' + i%10);
+			if (i != 98)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 	}
 	else
 	{
 		for (i = n; i > 98; i--)
-                {
-			_putchar('0' + i);
-			_putchar(',');
-			_putchar(' ');
-                }
+		{
+			 _putchar('0' + i/100);
+			_putchar('0' + i/10%10);
+			_putchar('0' + i%10);
+			if (i != 98)
+			{	
+				_putchar(',');
+				_putchar(' ');
+			}
+		}
 	}
-	_putchar('9');
-	_putchar('8');
 	_putchar('\n');
 }
