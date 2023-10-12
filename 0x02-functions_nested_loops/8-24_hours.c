@@ -7,7 +7,7 @@
  * Description: Function that prints every minute from 00:00 to 23:59
  *@h, @m: characters to check
  *
- * Return: Always 0 (Success)
+ * Return: None (void)
  */
 
 void jack_bauer(void)
@@ -26,5 +26,4 @@ void jack_bauer(void)
 			_putchar('\n');
 		}
 	}
-	return (0);
 }
