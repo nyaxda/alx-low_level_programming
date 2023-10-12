@@ -5,7 +5,7 @@
  * print_to_98 - Entry Point.
  *
  * Description: Function prints all natural numbers from n to 98.
- *
+ *@n: Parameter to be checked
  * Return: Always 0 (Success)
  */
 
@@ -23,8 +23,8 @@ void print_to_98(int n) /*Function definition*/
 			}
 			else
 			{
-			_putchar('0' + i / 10);
-			_putchar('0' + i % 10);
+				_putchar('0' + i / 10);
+				_putchar('0' + i % 10);
 			}
 				_putchar(',');
 				_putchar(' ');
@@ -42,7 +42,7 @@ void print_to_98(int n) /*Function definition*/
 			{
 				_putchar(i / 10 + '0');
 				_putchar(i % 10 + '0');
-			}	
+			}
 				_putchar(',');
 				_putchar(' ');
 			}
