@@ -22,6 +22,7 @@ void more_numbers(void)
 		{
 			_putchar(i);
 		}
+		fflush(stdout);
 
 		write(1, "11", 2);
 		write(1, "12", 2);
