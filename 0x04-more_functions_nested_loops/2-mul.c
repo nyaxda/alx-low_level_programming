@@ -32,7 +32,9 @@ int mul(int a, int b)
 		{
 			e = (c / d);
 			if (e == 0)
+			{
 				/* Does not output anything*/
+			}
 			else
 				f = (e % 10);
 			_putchar('0' + f);
@@ -49,7 +51,9 @@ int mul(int a, int b)
 		{
 			e = (c / d);
 			if (e == 0)
+			{
 				/* Does not output anything*/
+			}
 			else
 				f = (e % 10);
 			_putchar('0' + f);
