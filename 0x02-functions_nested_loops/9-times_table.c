@@ -22,13 +22,19 @@ void times_table(void)
 		for (m = 0; m < 10; m++)
 		{
 			v = r * m;
-			_putchar('0' + (v / 10));
-			_putchar('0' + (v % 10));
-			if  (m < 9)
+			if (m > 0)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
+			if (v < 10)
+			{
+				_putchar (' ');
+			}
+			else
+			{
+				_putchar('0' + (v / 10));
+			_putchar('0' + (v % 10));
 		}
 		_putchar('\n');
 	}
