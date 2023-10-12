@@ -10,7 +10,7 @@
  *
  * Return: Always 0 (Success)
  */
-int print_last_digit(int)
+int print_last_digit(int r)
 {
 	return(r%10);
 }
