@@ -14,7 +14,7 @@
 int a;
 int b;
 
-int add (a, b)
+int add(a, b)
 {
-	return (a + b)
+	return (a + b);
 }
