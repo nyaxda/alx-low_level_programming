@@ -18,7 +18,6 @@ void times_table(void)
 
 	for (r = 0; r < 10; r++)
 	{
-		_putchar('\n');
 		for (m = 0; m < 10; m++)
 		{
 			v = r * m;
