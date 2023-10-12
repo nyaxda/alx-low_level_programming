@@ -5,7 +5,7 @@
  * _abs - Entry Point.
  *
  * Description: Function that computes the absolute value of an integer.
- *
+ *@r: the character to check
  *
  * Return:Always 0 (Success)
  */
