@@ -9,7 +9,7 @@
  *@a: Integer variable 1
  *@b: Integer variable 2
  *
- * Return: Always 0 (Success)
+ * Return: The product of a and b
  */
  
 int mul(int a, int b)
