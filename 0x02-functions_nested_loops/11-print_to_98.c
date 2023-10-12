@@ -19,7 +19,7 @@ void print_to_98(int n) /*Function definition*/
 		{
 			if (i < 10)
 			{
-				_putchar(i + '0')
+				_putchar(i + '0');
 			}
 			else
 			{
