@@ -5,7 +5,7 @@
  *
  *Description: Tests for 0 if it's positive or negative
  *
- *@i: Variable to check
+ *
  *
  * Return: Always 0 (Success)
  */
