@@ -11,14 +11,12 @@
  * Return: void
  */
 
-void print_square(int size);
-
 void print_square(int size)
 {
 	if (size <= 0)
 	{
 		_putchar('\n');
-		}
+	}
 	else
 	{
 		int i = 0;
@@ -33,7 +31,6 @@ void print_square(int size)
 			}
 			_putchar ('\n');
 			i++;
-			}
-		_putchar('\n');
+		}
 	}
 }
