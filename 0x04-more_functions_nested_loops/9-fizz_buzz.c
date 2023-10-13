@@ -7,7 +7,7 @@
  * Description: prints the numbers from 1 to 100, and a new line.
  *For every multiple of 3, print "Buzz", 5, "Fizz", 15, "FizzBuzz".
  *
- * Return: void
+ * Return: 0 (Success)
  */
 int main(void)
 {
@@ -33,4 +33,5 @@ int main(void)
 		_putchar (' ');
 	}
 	_putchar('\n');
+	return (0);
 }
