@@ -15,15 +15,15 @@ int main(void)
 
 	for (i = 1; i <= 100; i++)
 	{
-		if (i % 15 == 0 && !(i < 15))
+		if (i % 15 == 0 && i >= 15)
 		{
 			printf("FizzBuzz");
 		}
-		else if (i % 3 == 0 && !(i < 3))
+		else if (i % 3 == 0 && i >= 3)
 		{
 			printf("Fizz");
 		}
-		else if (i % 5 == 0 && !(i < 5))
+		else if (i % 5 == 0 && i >= 5)
 		{
 			printf("Buzz");
 		}
