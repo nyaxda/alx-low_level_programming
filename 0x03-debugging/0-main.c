@@ -1,11 +1,9 @@
 #include "main.h"
 
 /**
- * main - tests funtion that prints if integer is positive or negative.
+ * main -Entry point of the program.
  *
  *Description: Tests for 0 if it's positive or negative
- *
- *
  *
  * Return: Always 0 (Success)
  */
