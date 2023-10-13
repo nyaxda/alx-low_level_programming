@@ -1,12 +1,8 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * main -Entry point of the program.
- *
- *Description: Tests for 0 if it's positive or negative
- *
- * Return: Always 0 (Success)
+ * main - tests function that prints if integer is positive or negative
+ * Return: 0
  */
 
 int main(void)
