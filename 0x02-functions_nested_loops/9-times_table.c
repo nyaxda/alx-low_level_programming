@@ -21,12 +21,12 @@ void times_table(void)
 		for (m = 0; m < 10; m++)
 		{
 			v = r * m;
-			if (m > 0)
+			if (m < 10 && m != 0)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
-			else if (v < 10)
+			if (v < 10)
 			{
 				_putchar (' ');
 			}
