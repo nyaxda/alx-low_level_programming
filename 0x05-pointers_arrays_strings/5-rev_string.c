@@ -8,6 +8,7 @@
  *@i: integer variable
  *@t: integer variable
  *@len: long integer variable
+ *@s: pointer to a char
  *
  * Return: void
  */
@@ -17,7 +18,8 @@ void rev_string(char *s)
 	size_t i;
 	size_t t;
 	size_t len;
-	len = strlen (s);
+
+	len = strlen(s);
 
 	for (i = 0; i < len / 2; i++)
 	{
