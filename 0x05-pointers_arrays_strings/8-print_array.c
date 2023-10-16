@@ -13,7 +13,7 @@
  */
 void print_array(int *a, int n)
 {
-	size_t i;
+	int i;
 	size_t j;
 	for (i = 0; i < n; i++)
 	{
