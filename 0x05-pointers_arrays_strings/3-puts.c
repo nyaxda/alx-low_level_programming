@@ -1,5 +1,5 @@
 #include <string.h>
-#include "main.h>"
+#include "main.h"
 
 /**
  * swap_int - prints a string, followed by a new line, to stdout.
