@@ -15,11 +15,12 @@ void print_array(int *a, int n)
 {
 	int i;
 	size_t j;
-	
+	char str[20];
+
 	for (i = 0; i < n; i++)
 	{
 		j = a[i];
-		char str[20];
+
 		snprintf(str, sizeof(str), "%d", j);
 		for (j = 0; j < strlen(str); j++)
 		{
