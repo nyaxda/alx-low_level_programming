@@ -25,7 +25,7 @@ void print_array(int *a, int n)
 		snprintf(str, sizeof(str), "%d", j);
 		for (k = 0; k < strlen(str); k++)
 		{
-			_putchar(str[j]);
+			_putchar(str[k]);
 		}
 	if (i < (n - 1))
 	{
