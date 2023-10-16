@@ -6,11 +6,7 @@
  *
  * Description: function that prints a string in reverse.
  *
- *@i: long integer variable used in looping
- *@t: long integer variable used in looping
- *@len: long integer variable to determing length of string.
- *@s: pointer to a char
- *
+ *@s: pointer to a char to be reversed.
  * Return: void
  */
 
