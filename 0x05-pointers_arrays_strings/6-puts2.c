@@ -5,7 +5,6 @@
  * puts2 - prints every other character, starting with 1st character.
  * Description: function that prints every other xter,then a new line.
  *
-<<<<<<< HEAD
  *@str: pointer to a char
 =======
  * @str: pointer to a char
