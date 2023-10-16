@@ -14,7 +14,7 @@
 void print_array(int *a, int n)
 {
 	int i;
-	size_t j;
+	int j;
 	char str[20];
 
 	for (i = 0; i < n; i++)
