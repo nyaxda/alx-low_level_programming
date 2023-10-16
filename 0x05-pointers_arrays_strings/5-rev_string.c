@@ -14,8 +14,8 @@
 
 void rev_string(char *s)
 {
-	size_t int i;
-	size_t int t;
+	size_t i;
+	size_t t;
 	size_t len;
 	len = strlen (s);
 
