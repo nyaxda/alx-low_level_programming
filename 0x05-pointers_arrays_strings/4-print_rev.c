@@ -6,7 +6,7 @@
  *
  * Description: function that prints a string in reverse,then a new line.
  *
- * @str: pointer to a char
+ * @s: pointer to a char
  *
  * Return: void
  */
@@ -14,7 +14,7 @@ void print_rev(char *s)
 {
 	size_t i;
 
-	for (i = strlen(s); i > 0; i--)
+	for (i = strlen(s); i >= 0; i--)
 	{
 		_putchar(s[i]);
 	}
