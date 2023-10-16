@@ -1,13 +1,14 @@
 #include <string.h>
+#include <stdio.h>
 #include "main.h"
 /**
  * rev_string - prints a string in reverse.
  *
  * Description: function that prints a string in reverse.
  *
- *@i: integer variable
- *@t: integer variable
- *@len: long integer variable
+ *@i: long integer variable used in looping
+ *@t: long integer variable used in looping
+ *@len: long integer variable to determing length of string.
  *@s: pointer to a char
  *
  * Return: void
