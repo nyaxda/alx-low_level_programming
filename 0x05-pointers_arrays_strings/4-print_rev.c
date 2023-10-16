@@ -13,8 +13,9 @@
 void print_rev(char *s)
 {
 	size_t i;
+    i = (strlen(s));
 
-	for (i = (strlen(s)); i > 0; --i)
+	while (i--)
 	{
 		_putchar(s[i]);
 	}
