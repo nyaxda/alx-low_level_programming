@@ -1,5 +1,5 @@
 #include <string.h>
-#include <stdio.h>
+#include "main.h"
 /**
  * rev_string - prints a string in reverse.
  *
@@ -11,7 +11,7 @@
  *
  * Return: void
  */
-void rev_string(char *s);
+
 void rev_string(char *s)
 {
 	int i;
