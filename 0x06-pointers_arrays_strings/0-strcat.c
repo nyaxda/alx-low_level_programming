@@ -11,7 +11,7 @@
  *@dest: pointer to a char
  *@src: pointer to a char
  *
- * Return: void
+ * Return: concantenated string (char*)
  */
 char *_strcat(char *dest, char *src)
 {
