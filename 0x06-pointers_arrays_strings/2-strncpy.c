@@ -5,7 +5,7 @@
 /**
  * _strncpy - copies a string.
  * Description: function that copies a string.
- * 
+ *
  *@dest: pointer to a char
  *@src: pointer to a char
  *@n: integer variable
