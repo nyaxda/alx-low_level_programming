@@ -7,9 +7,7 @@
  * Description: function that changes all lowercase letters of a
  * string to uppercase.
  *
- *@a: pointer to an integer
- *@n: integer variable
- *
+ *@str: pointer to an integer
  *
  * Return: void.
  */
