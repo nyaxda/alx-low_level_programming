@@ -21,7 +21,8 @@ char *cap_string(char *str)
 	while (*origin != '\0')
 	{
 		i = (int)*origin;
-		if (*(origin - 1) == ' ' ||
+		if (
+		*(origin - 1) == ' ' ||
 		*(origin - 1) == '\n' ||
 		*(origin - 1) == '\t' ||
 		*(origin - 1) == '.' ||
