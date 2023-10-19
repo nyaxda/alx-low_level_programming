@@ -16,6 +16,7 @@ char *cap_string(char *s)
  int i;
  int x;
  int step;
+ char sep;
 
  step = 32;
  sep[13] = {' ', '\n', '\t', '?', '"', '(', ')', '.', ',',
