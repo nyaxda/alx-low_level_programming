@@ -7,7 +7,7 @@
  * Description: function that capitalizes first words of a string.
  *
  * @str: pointer to a char
- * 
+ *
  * Return: capitalized first words of a string (*char).
  */
 
