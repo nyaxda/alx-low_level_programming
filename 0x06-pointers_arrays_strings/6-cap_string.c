@@ -16,7 +16,7 @@ char *cap_string(char *s)
 	int i;
 	int x;
 	int step;
-	char sep [13] = {' ', '\n', '\t', '?', '"', '(', ')', '.', ',',
+	char sep[13] = {' ', '\n', '\t', '?', '"', '(', ')', '.', ',',
 	'{', '}', '!', ';'};
 
 	step = 32;
@@ -33,5 +33,5 @@ char *cap_string(char *s)
 		step = 32;
 	}
 	}
- return (s);
+	return (s);
 }
