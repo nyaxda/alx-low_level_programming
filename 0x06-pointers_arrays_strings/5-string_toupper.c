@@ -17,7 +17,6 @@ char *string_toupper(char *ptr)
 {
 	char *origin = ptr;
 	size_t i;
-	int j;
 
 	*origin = *ptr;
 
