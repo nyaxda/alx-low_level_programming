@@ -9,13 +9,12 @@
  * Return: capitalized first words of a string (*char).
  */
 
-char *cap_string(char *ptr)
+char *cap_string(char *str)
 {
-	char *origin = ptr;
+	char *origin = str;
 	size_t i;
-	int j;
 
-	*origin = *ptr;
+	*origin = *str;
 
 	while (*origin != '\0')
 	{
@@ -50,5 +49,5 @@ char *cap_string(char *ptr)
 		}
 		origin++;
 	}
-	return (ptr);
+	return (str);
 }
