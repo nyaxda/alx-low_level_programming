@@ -27,7 +27,7 @@ char *string_toupper(char *str)
 		{
 			*origin = ((char)(i - 32));
 		}
-		else if ( i > 64 && i < 91)
+		else if (i > 64 && i < 91)
 		{
 			*origin = ((char)i);
 		}
