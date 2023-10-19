@@ -23,10 +23,15 @@ char *leet(char *ptr)
 	}
 
 	mod['a'] = '4';
+	mod['A'] = '4';
 	mod['e'] = '3';
+	mod['E'] = '3';
 	mod['o'] = '0';
+	mod['O'] = '0';
 	mod['t'] = '7';
+	mod['T'] = '7';
 	mod['l'] = '1';
+	mod['L'] = '1';
 
 	ptr = init;
 
