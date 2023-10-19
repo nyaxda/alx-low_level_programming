@@ -17,7 +17,7 @@ char *cap_string(char *s)
  int x;
  int step;
  char sep [13] = {' ', '\n', '\t', '?', '"', '(', ')', '.', ',',
-    '{', '}', '!', ';'};
+	'{', '}', '!', ';'};
 
  step = 32;
 
@@ -29,8 +29,8 @@ char *cap_string(char *s)
   for (x = 0; x <= 12; x++)
    if (s[i] == sep[x])
    {
-    x = 12;
-    step = 32;
+	x = 12;
+	step = 32;
    }
  }
  return (s);
