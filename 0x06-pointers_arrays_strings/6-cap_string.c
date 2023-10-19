@@ -16,10 +16,10 @@ char *cap_string(char *s)
  int i;
  int x;
  int step;
- char sep[];
+ char sep[13];
 
  step = 32;
- char sep[] = {' ', '\n', '\t', '?', '"', '(', ')', '.', ',',
+ sep[] = {' ', '\n', '\t', '?', '"', '(', ')', '.', ',',
     '{', '}', '!', ';',};
 
  for (i = 0; s[i] != '\0'; i++)
