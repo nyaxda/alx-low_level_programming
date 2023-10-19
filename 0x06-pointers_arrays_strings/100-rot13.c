@@ -16,12 +16,13 @@ char *rot13(char *str)
 	size_t i;
 	char *init = str;
 	i = (int)(*str);
+
 	while (*str != '\0')
 	{
 		i = (int)(*str);
 		if (isalpha(*str))
 		{
-			if ((i >= 65 && i <= 77 ) || (i >= 97 && i <= 109))
+			if ((i >= 65 && i <= 77) || (i >= 97 && i <= 109))
 			{
 				*str = (char)(i + 13);
 			}
