@@ -11,42 +11,25 @@
  * Return: capitalized first words of a string (*char).
  */
 
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	char *origin = str;
-	size_t i;
+ int i;
+ int x
+ step = 32;
+ char sep[] = {' ', '\n', '\t', '?', '"', '(', ')', '.', ',',
+    '{', '}', '!', ';',};
 
-	*origin = *str;
-
-	while (*origin != '\0')
-	{
-		i = (int)*origin;
-		if (
-		*(origin - 1) == ' ' ||
-		*(origin - 1) == '\n' ||
-		*(origin - 1) == '\t' ||
-		*(origin - 1) == '.' ||
-		*(origin - 1) == '!' ||
-		*(origin - 1) == '?' ||
-		*(origin - 1) == ',' ||
-		*(origin - 1) == ' ' ||
-		*(origin - 1) == ';' ||
-		*(origin - 1) == '"' ||
-		*(origin - 1) == '(' ||
-		*(origin - 1) == ')' ||
-		*(origin - 1) == '{' ||
-		*(origin - 1) == '}')
-		{
-			if (i > 96 && i < 123)
-			{
-				*origin = ((char)(i - 32));
-			}
-			else
-			{
-				*origin = ((char)i);
-			}
-		}
-		origin++;
-	}
-	return (str);
+ for (i = 0; s[i] != '\0'; i++)
+ {
+  if (s[i] >= 'a' && s[i] <= 'z')
+   s[i] = s[i] - step;
+  step = 0;
+  for (x = 0; x <= 12; x++)
+   if (s[i] == sep[x])
+   {
+    x = 12;
+    step = 32;
+   }
+ }
+ return (s);
 }
