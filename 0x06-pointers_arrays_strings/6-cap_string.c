@@ -22,7 +22,6 @@ char *cap_string(char *str)
 	{
 		i = (int)*origin;
 		if (*origin == ' ' ||
-		*origin == ',' ||
 		*origin == ';' ||
 		*origin == '"' ||
 		*origin == '(' ||
@@ -38,7 +37,8 @@ char *cap_string(char *str)
 		*(origin - 1) == '\t' ||
 		*(origin - 1) == '.' ||
 		*origin == '!' ||
-		*origin == '?')
+		*origin == '?' ||
+		*origin == ',')
 		{
 			if (i > 96 && i < 123)
 			{
