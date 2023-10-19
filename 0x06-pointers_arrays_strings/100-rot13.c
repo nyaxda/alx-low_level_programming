@@ -15,6 +15,7 @@ char *rot13(char *str)
 {
 	size_t i;
 	char *init = str;
+	
 	i = (int)(*str);
 
 	while (*str != '\0')
