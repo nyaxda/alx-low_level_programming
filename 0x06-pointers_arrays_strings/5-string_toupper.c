@@ -13,12 +13,12 @@
  *
  * Return: void.
  */
-char *string_toupper(char *ptr)
+char *string_toupper(char *str)
 {
-	char *origin = ptr;
+	char *origin = str;
 	size_t i;
 
-	*origin = *ptr;
+	*origin = *str;
 
 	while (*origin != '\0')
 	{
@@ -33,5 +33,5 @@ char *string_toupper(char *ptr)
 		}
 		origin++;
 	}
-	return (ptr);
+	return (str);
 }
