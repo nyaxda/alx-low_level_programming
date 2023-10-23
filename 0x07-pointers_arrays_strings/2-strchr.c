@@ -14,13 +14,16 @@
  */
 char *_strchr(char *s, char c)
 {
-	size_t i;
+	size_t i = 0;
+	size_t len = strlen(s);
 
-	for (i = 0; i < strlen(s); i++)
+	while (i < len)
 	{
 		if (s[i] == c)
+		{
 			return (s + i);
+		}
+		i++
 	}
-
 	return (NULL);
 }
