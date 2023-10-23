@@ -19,7 +19,7 @@
 void print_diagsums(int *a, int size)
 {
 		int rows = size, cols = size, sum_1 = 0;
-		int sum_2 = 0, i, j, number, divisor = 1;
+		int sum_2 = 0, i, number, divisor = 1;
 
 		if (rows != cols)
 		{
@@ -29,7 +29,7 @@ void print_diagsums(int *a, int size)
 	{
         return;
     }
-    for (int i = 0; i < size; i++) 
+    for (i = 0; i < size; i++) 
 	{
         sum_1 += a[i * size + i];
         sum_2 += a[i * size + (size - 1 - i)];
