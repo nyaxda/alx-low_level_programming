@@ -23,7 +23,7 @@ void print_diagsums(int *a, int size)
 	int sum_1 = 0;
 	int sum_2 = 0;
 	int i, j;
-	int number, number_2;
+	int number;
 	int divisor = 1;
 
 	if (rows != cols)
