@@ -19,7 +19,6 @@ char *_strstr(char *haystack, char *needle)
 {
 	size_t i = 0;
 	size_t a;
-	int t;
 
 	size_t len = strlen(haystack);
 	size_t lenn = strlen(needle);
@@ -29,20 +28,19 @@ char *_strstr(char *haystack, char *needle)
 		return (haystack);
 	}
 
-	while (i <= len && haystack[i] != '\0')
+	while (i < len - lenn && haystack[i] != '\0')
 	{
 		a = 0;
-		t = 0;
-		while (a <= lenn)
+
+		while (a < lenn)
 		{
-			if (haystack[i] == needle[a])
+			if (haystack[i + a] != needle[a])
 			{
-				t = 1;
 				break;
 			}
 			a++;
 		}
-		if (t)
+		if (a == lenn)
 		{
 			return (&haystack[i]);
 		}
