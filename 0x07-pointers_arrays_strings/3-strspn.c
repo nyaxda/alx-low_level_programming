@@ -16,10 +16,16 @@ unsigned int _strspn(char *s, char *accept)
 	size_t i = 0;
 	size_t a;
 	int t;
+
 	size_t len = strlen(s);
 	size_t lenn = strlen(accept);
 	size_t count = 0;
 
+	if (lenn == 0)
+	{
+		return (0);
+	}
+	
 	while (i <= len)
 	{
 		a = 0;
@@ -37,7 +43,7 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			break;
 		}
-		
+
 		count++;
 		i++;
 	}
