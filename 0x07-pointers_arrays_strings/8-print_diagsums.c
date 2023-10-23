@@ -24,6 +24,7 @@ void print_diagsums(int *a, int size)
 	int sum_2 = 0;
 	int i, j;
 	int number, number_2;
+	int divisor = 1;
 
 	if (rows != cols)
 	{
@@ -44,18 +45,21 @@ void print_diagsums(int *a, int size)
 			}
 		}
 	}
-
 if (sum_1 < 0)
 {
 	_putchar('-');
 	sum_1 = -sum_1;
 }
 number = sum_1;
-while (number > 0)
+while (divisor * 10 <= number)
 {
-	number_2 = number % 10;
-	_putchar(number_2 + '0');
-	number /= 10;
+	divisor *= 10;
+}
+while (divisor > 0)
+{
+	_putchar ((number / divisor) + '0');
+	number %= divisor;
+	divisor /= 10;
 }
 
 _putchar(',');
@@ -68,11 +72,16 @@ if (sum_2 < 0)
 }
 
 number = sum_2;
-while (number > 0)
+divisor = 1;
+while (divisor * 10 <= number)
 {
-	number_2 = number % 10;
-	_putchar(number_2 + '0');
-	number /= 10;
+	divisor *= 10;
+}
+while (divisor > 0)
+{
+	_putchar ((number / divisor) + '0');
+	number %= divisor;
+	divisor /= 10;
 }
 _putchar('\n');
 }
