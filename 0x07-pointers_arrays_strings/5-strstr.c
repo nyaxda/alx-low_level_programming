@@ -3,7 +3,8 @@
 #include "main.h"
 
 /**
- * _strstr -  finds the first occurrence of the substring needle in the string haystack.
+ * _strstr -  finds the first occurrence of
+ * the substring needle in the string haystack.
  * The terminating null bytes (\0) are not compared
  *
  * Description: function that searches a string for any of a set of bytes.
