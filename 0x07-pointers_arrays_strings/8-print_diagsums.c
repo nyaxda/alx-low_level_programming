@@ -17,20 +17,22 @@
  *
  */
 
-void print_diagsums(int *a, int size) {
-	if (size <= 0) {
-		return; // Check for invalid size
+void print_diagsums(int *a, int size) 
+{
+	if (size <= 0) 
+	{
+		return;
 	}
-
 	int sum_1 = 0;
 	int sum_2 = 0;
 
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < size; i++) 
+	{
 		sum_1 += a[i * size + i];
 		sum_2 += a[i * size + (size - 1 - i)];
 	}
-
-	if (sum_1 < 0) {
+	if (sum_1 < 0) 
+	{
 		_putchar('-');
 		sum_1 = -sum_1;
 	}
@@ -38,11 +40,12 @@ void print_diagsums(int *a, int size) {
 	int divisor = 1;
 	int number = sum_1;
 
-	while (divisor * 10 <= number) {
+	while (divisor * 10 <= number) 
+	{
 		divisor *= 10;
 	}
-
-	while (divisor > 0) {
+	while (divisor > 0) 
+	{
 		_putchar((number / divisor) + '0');
 		number %= divisor;
 		divisor /= 10;
@@ -51,7 +54,8 @@ void print_diagsums(int *a, int size) {
 	_putchar(',');
 	_putchar(' ');
 
-	if (sum_2 < 0) {
+	if (sum_2 < 0) 
+	{
 		_putchar('-');
 		sum_2 = -sum_2;
 	}
@@ -59,11 +63,12 @@ void print_diagsums(int *a, int size) {
 	divisor = 1;
 	number = sum_2;
 
-	while (divisor * 10 <= number) {
+	while (divisor * 10 <= number) 
+	{
 		divisor *= 10;
 	}
-
-	while (divisor > 0) {
+	while (divisor > 0) 
+	{
 		_putchar((number / divisor) + '0');
 		number %= divisor;
 		divisor /= 10;
