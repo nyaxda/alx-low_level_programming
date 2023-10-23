@@ -18,19 +18,13 @@
  */
 void print_diagsums(int *a, int size)
 {
-		int rows = size;
-		int cols = size;
-		int sum_1 = 0;
-		int sum_2 = 0;
-		int i, j;
-		int number;
-		int divisor = 1;
+		int rows = size, cols = size, sum_1 = 0;
+		int sum_2 = 0, i, j, number, divisor = 1;
 
 		if (rows != cols)
 		{
 				return;
 		}
-
 		for (i = 0; i < rows; i++)
 		{
 				for (j = 0; j < cols; j++)
@@ -61,16 +55,13 @@ while (divisor > 0)
 		number %= divisor;
 		divisor /= 10;
 }
-
 _putchar(',');
 _putchar(' ');
-
 if (sum_2 < 0)
 {
 		_putchar('-');
 		sum_2 = -sum_2;
 }
-
 number = sum_2;
 divisor = 1;
 while (divisor * 10 <= number)
