@@ -25,20 +25,15 @@ void print_diagsums(int *a, int size)
 		{
 				return;
 		}
-		for (i = 0; i < rows; i++)
-		{
-				for (j = 0; j < cols; j++)
-				{
-						if (i == j)
-						{
-								sum_1 += a[i * cols + j];
-						}
-						if (i + j == rows - 1)
-						{
-								sum_2 += a[i * cols + j];
-						}
-				}
-		}
+    if (size <= 0) 
+	{
+        return;
+    }
+    for (int i = 0; i < size; i++) 
+	{
+        sum_1 += a[i * size + i];
+        sum_2 += a[i * size + (size - 1 - i)];
+    }
 if (sum_1 < 0)
 {
 		_putchar('-');
