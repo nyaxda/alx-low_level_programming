@@ -69,3 +69,4 @@ void print_diagsums(int *a, int size)
 	}
 	_putchar('\n');
 }
+
