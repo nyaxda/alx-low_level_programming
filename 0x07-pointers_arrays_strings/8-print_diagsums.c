@@ -20,10 +20,10 @@ void print_diagsums(int *a, int size)
 {
 	int rows = size;
 	int cols = size;
-	int sum_1= 0;
+	int sum_1 = 0;
 	int sum_2 = 0;
-
 	int i, j;
+
 	if (rows != cols)
 	{
 		return;
