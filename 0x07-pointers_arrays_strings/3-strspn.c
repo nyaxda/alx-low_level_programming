@@ -25,8 +25,8 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		return (0);
 	}
-	
-	while (i <= len)
+
+	while (i <= len && s[i] != '\0')
 	{
 		a = 0;
 		t = 0;
