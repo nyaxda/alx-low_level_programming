@@ -10,18 +10,18 @@
  *@b: char variable
  *@n: int variable
  *
- * Return: pointer to the memory area s
+ * Return: pointer to the memory area s.
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-    char *origin = s;
-    size_t i;
+	char *origin = s;
+	size_t i;
 
-    for (i = 0; i < n; i++)
-    {
-        *s = b;
-        s++;
-    }
+	for (i = 0; i < n; i++)
+	{
+		*s = b;
+		s++;
+	}
 
-    return (origin);
+	return (origin);
 }
