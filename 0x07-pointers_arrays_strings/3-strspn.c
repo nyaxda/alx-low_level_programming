@@ -11,6 +11,7 @@
  *
  * Return: the number of bytes in the initial segment of s.
  */
+unsigned int _strspn(char *s, char *accept)
 {
 	size_t i = 0;
 	size_t j = 0;
