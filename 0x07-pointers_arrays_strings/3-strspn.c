@@ -14,21 +14,22 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	size_t i = 0;
-	size_t j = 0;
+	size_t a;
 	size_t len = strlen(s);
-	size_t len2 = strlen(accept);
+	size_t lenn = strlen(accept);
 	size_t count = 0;
 
 	while (i <= len)
 	{
-		while (j <= len2)
+		a = 0;
+		while (a <= lenn)
 		{
-			if (s[i] == accept[j])
+			if (s[i] == accept[a])
 			{
 				count++;
 				break;
 			}
-			j++;
+			a++;
 		}
 		i++;
 	}
