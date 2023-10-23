@@ -50,19 +50,15 @@ void print_diagsums(int *a, int size)
 		number %= divisor;
 		divisor /= 10;
 	}
-
 	_putchar(',');
 	_putchar(' ');
-
 	if (sum_2 < 0) 
 	{
 		_putchar('-');
 		sum_2 = -sum_2;
 	}
-
 	divisor = 1;
 	number = sum_2;
-
 	while (divisor * 10 <= number) 
 	{
 		divisor *= 10;
@@ -73,6 +69,5 @@ void print_diagsums(int *a, int size)
 		number %= divisor;
 		divisor /= 10;
 	}
-
 	_putchar('\n');
 }
