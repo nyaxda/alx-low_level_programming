@@ -18,18 +18,28 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int rows = sizeof(a) / sizeof(a[0]);
-	int cols = sizeof(a[0]) / sizeof(a[0][0]);
-	int sum = 0;
+	int rows = size;
+	int cols = size;
+	int sum_1= 0;
+	int sum_2 = 0;
+
 	int i, j;
-	
+	if (rows != cols)
+	{
+		return;
+	}
+
 	for (i = 0; i < rows; i++)
 	{
 		for (j = 0; j < cols; j++)
 		{
 			if (i == j)
 			{
-				sum += a[i][j];
+				sum_1 += a[i * cols + j];
+			}
+			if (i + j == rows - 1)
+			{
+				sum_2 += a[i * cols + j];
 			}
 		}
 	}
