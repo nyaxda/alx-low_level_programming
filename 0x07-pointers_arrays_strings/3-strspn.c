@@ -15,6 +15,7 @@ unsigned int _strspn(char *s, char *accept)
 {
 	size_t i = 0;
 	size_t a;
+	int t;
 	size_t len = strlen(s);
 	size_t lenn = strlen(accept);
 	size_t count = 0;
@@ -22,15 +23,22 @@ unsigned int _strspn(char *s, char *accept)
 	while (i <= len)
 	{
 		a = 0;
+		t = 0;
 		while (a <= lenn)
 		{
 			if (s[i] == accept[a])
 			{
-				count++;
+				t = 1;
 				break;
 			}
 			a++;
 		}
+		if (!t)
+		{
+			break;
+		}
+		
+		count++;
 		i++;
 	}
 	return (count);
