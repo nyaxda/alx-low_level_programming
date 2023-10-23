@@ -22,6 +22,7 @@ void print_diagsums(int *a, int size)
 	int cols = sizeof(a[0]) / sizeof(a[0][0]);
 	int sum = 0;
 	int i, j;
+	
 	for (i = 0; i < rows; i++)
 	{
 		for (j = 0; j < cols; j++)
