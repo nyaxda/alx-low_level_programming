@@ -12,9 +12,9 @@ int modifier(char *s, int len, int i);
 
 int is_palindrome(char *s)
 {
-   int len = strlen(s);
+	int len = strlen(s);
 
-   return (modifier(s, len, 0));
+	return(modifier(s, len, 0));
 }
 
 /**
