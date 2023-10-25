@@ -8,7 +8,7 @@
  * Return: 1 is its a palindrome and 0 if not.
  *
  */
-int modifier(char *s, int len, int i);
+
 
 int is_palindrome(char *s)
 {
