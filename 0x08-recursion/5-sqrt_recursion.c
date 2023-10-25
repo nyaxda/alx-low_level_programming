@@ -12,9 +12,10 @@
  * Return: int variable
  *
  */
-int checker (int i, int n)
+int checker(int i, int n)
 {
 	int j;
+	
 	if (i * i != n)
 	{
 		if (i > n)
