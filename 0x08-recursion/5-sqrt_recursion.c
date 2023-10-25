@@ -15,7 +15,7 @@
 int checker(int i, int n)
 {
 	int j;
-	
+
 	if (i * i != n)
 	{
 		if (i > n)
