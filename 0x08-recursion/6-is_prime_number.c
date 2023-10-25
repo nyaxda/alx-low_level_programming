@@ -3,7 +3,8 @@
 #include "main.h"
 
 /**
- * checker -  returns 1 if the input integer is a prime number, otherwise return 0
+ * checker -  returns 1 if the input integer is a prime number,
+ * otherwise return 0
  * Description: function that checks if a number is prime.
  *
  *@n: int variable to be checked if is prime
@@ -13,7 +14,7 @@
  *
  */
 
-int checker (int n, int i)
+int checker(int n, int i)
 {
 	if (i <= 1)
 	{
@@ -23,11 +24,12 @@ int checker (int n, int i)
 	{
 		return (0);
 	}
-	return checker(n, i - 1);
+	return (checker(n, i - 1));
 }
 
 /**
- * is_prime_number -  returns 1 if the input integer is a prime number, otherwise return 0
+ * is_prime_number -  returns 1 if the input integer is a prime number,
+ * otherwise return 0
  * Description: function that checks if a number is prime.
  *
  *@n: int variable
@@ -42,5 +44,5 @@ int is_prime_number(int n)
 	{
 		return (0);
 	}
-	return checker(n, n - 1);
+	return (checker(n, n - 1));
 }
