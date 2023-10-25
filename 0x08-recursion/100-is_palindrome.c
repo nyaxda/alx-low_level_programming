@@ -3,25 +3,6 @@
 #include "main.h"
 
 /**
- * is_palindrome -  returns 1 if a string is a palindrome and 0 if not.
- * Description: function that returns 1 if a string
- * is a palindrome and 0 if not.
- *
- *@s: char variable to check
- *
- * Return: 1 is its a palindrome and 0 if not.
- *
- */
-
-
-int is_palindrome(char *s)
-{
-	int len = strlen(s);
-
-	return (modifier(s, len, 0));
-}
-
-/**
  * modifier - Recursively check if a string is a palindrome.
  * @s: The input string to check.
  * @len: The length of the input string.
@@ -46,4 +27,23 @@ int modifier(char *s, int len, int i)
 		return (1);
 	}
 	return (modifier(s, len, i + 1));
+}
+
+/**
+ * is_palindrome -  returns 1 if a string is a palindrome and 0 if not.
+ * Description: function that returns 1 if a string
+ * is a palindrome and 0 if not.
+ *
+ *@s: char variable to check
+ *
+ * Return: 1 is its a palindrome and 0 if not.
+ *
+ */
+
+
+int is_palindrome(char *s)
+{
+	int len = strlen(s);
+
+	return (modifier(s, len, 0));
 }
