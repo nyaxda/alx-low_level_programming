@@ -19,7 +19,7 @@ int main (int argc, char *argv[])
 {
 	char modified_name[1024];
 
-	readlink("/proc/self/exe", modified_name, sizeof(previous_name)-1);
+	readlink("/proc/self/exe", modified_name, sizeof(modified_name)-1);
 
 	if (strcmp(argv[0], modified_name) != 0)
 	{
