@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 {
 	int i, status;
 	unsigned int n, sum = 0;
+	char *endpointer;
 
 	if (argc < 2)
 	{
@@ -29,11 +30,10 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		status = kstrtouint(argv[i], 10, &n);
-		if (status == 0)
-		{
+		n = strtoul(argv[i], &endpointer, 10);
+
+		if (*endpointer == '\0' && n != ULONG_MAX) {
 			sum += n;
-		}
 		else
 		{
 			printf("Error\n");
