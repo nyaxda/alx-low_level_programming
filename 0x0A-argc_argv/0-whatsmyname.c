@@ -17,6 +17,8 @@
 
 int main(__attribute__((unused)) int argc, char *argv[]) {
 	char *name = strrchr(argv[0], '/');
+	char path[4096];
+	
 	if (name == NULL)
 	{
 		name = argv[0];
@@ -25,7 +27,7 @@ int main(__attribute__((unused)) int argc, char *argv[]) {
 	{
 		name++;
 	}
-	char path[4096];
+	
 	if (readlink("/proc/self/exe", path, sizeof(path)) == -1)
 	{
 		perror("readlink");
