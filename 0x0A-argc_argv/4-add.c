@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	{
 		n = strtoul(argv[i], &endpointer, 10);
 
-		if (*endpointer == '\0' && n != ULONG_MAX)
+		if (*endpointer == '\0')
 		{
 			sum += n;
 		}
