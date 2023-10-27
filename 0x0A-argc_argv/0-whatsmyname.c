@@ -17,6 +17,7 @@
 
 int main (__attribute__((unused)) int argc, char *argv[])
 {
+	int i;
 	char modified_name[1024];
 
 	readlink("/proc/self/exe", modified_name, sizeof(modified_name)-1);
@@ -26,7 +27,6 @@ int main (__attribute__((unused)) int argc, char *argv[])
 		argv[0] = modified_name;
 	}
 
-	int i;
 	for (i = 0; argv[0][i] != '\0'; i++)
 	{
 		_putchar(argv[0][i]);
