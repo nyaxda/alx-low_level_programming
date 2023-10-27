@@ -15,7 +15,7 @@
  * Return: 0 on success
  */
 
-int main(__attribute__((unused)) int argc, char *argv[]) 
+int main(__attribute__((unused)) int argc, char *argv[])
 {
 	char *name = strrchr(argv[0], '/');
 	char path[4096];
