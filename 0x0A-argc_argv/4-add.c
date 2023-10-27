@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-
 #include "main.h"
 
 /**
@@ -22,7 +21,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
+	int i, flag, status, n;
 	int sum = 0;
 
 	if (argc < 2)
@@ -32,13 +31,17 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		if (!isdigit(argv[i]))
+		status = sscanf (argv[i], "%d", &n);
+		if (status == 1)
+		{
+			sum += atoi(argv[i]);
+		}
+		else
 		{
 			printf("Error\n");
 			return (1);
 		}
-		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
-	return (0);
+	return (0)
 }
