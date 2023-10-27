@@ -25,7 +25,16 @@ int main(__attribute__((unused)) int argc, char *argv[]) {
 	{
 		name++;
 	}
-	if (access(argv[0], X_OK) == 0)
+	char path[4096];
+	if (readlink("/proc/self/exe", path, sizeof(path)) == -1)
+	{
+		perror("readlink");
+		return 1;
+	}
+
+	path[sizeof(path) - 1] = '\0';
+
+	if (strcmp(path, argv[0]) == 0)
 	{
 		printf("./%s\n", name);
 	}
