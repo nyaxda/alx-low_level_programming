@@ -15,30 +15,18 @@
  * Return: 0 on success
  */
 
-int main(__attribute__((unused)) int argc, char *argv[])
-{
-	char modified_name[1024];
-
-	ssize_t len = readlink(
-		"/proc/self/exe", modified_name, sizeof(modified_name) - 1);
-
-	if (len != -1)
+int main(int argc, char *argv[]) {
+	char *name = strrchr(argv[0], '/');
+	if (name == NULL)
 	{
-		modified_name[len] = '\0';
+		name = argv[0];
+	}
+	else
+	{
+		name++;
 	}
 
-	if (strcmp(modified_name, ".") == 0 || strstr(modified_name, "./") == NULL)
-	{
-    	strcpy(modified_name, "./");
-	}
+	printf("%s\n", name);
 
-	if (strcmp(argv[0], modified_name) != 0)
-	{
-		argv[0] = modified_name;
-	}
-	{
-		printf("%s\n", argv[0]);
-	}
-
-	return (0);
+	return 0;
 }
