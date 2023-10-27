@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+
 #include "main.h"
 
 /**
@@ -16,9 +18,9 @@
  * Return: 0 on success
  */
 
-int main(__attribute__((unused)) int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	if (argv != 3)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
