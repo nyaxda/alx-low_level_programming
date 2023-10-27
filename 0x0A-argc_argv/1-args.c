@@ -15,13 +15,7 @@
 
 int main(__attribute__((unused)) int argc, char *argv[])
 {
-	int count = 0;
+	printf("%d\n", argc - 1);
 
-	while (argv[count] != NULL)
-	{
-		count++;
-	}
-	printf("%d\n", count - 1);
-	
 	return (0);
 }
