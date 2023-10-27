@@ -27,9 +27,9 @@ int main(__attribute__((unused)) int argc, char *argv[])
 		modified_name[len] = '\0';
 	}
 
-	if (strcmp(modified_name, ".") == 0)
+	if (strcmp(modified_name, ".") == 0 || strstr(modified_name, "./") == NULL)
 	{
-		strcpy(modified_name, "./");
+    	strcpy(modified_name, "./");
 	}
 
 	if (strcmp(argv[0], modified_name) != 0)
