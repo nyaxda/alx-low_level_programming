@@ -19,7 +19,12 @@ int main (__attribute__((unused)) int argc, char *argv[])
 {
 	char modified_name[1024];
 
-	readlink("/proc/self/exe", modified_name, sizeof(modified_name)-1);
+	ssize_t len = readlink("/proc/self/exe", modified_name, sizeof(modified_name) - 1);
+
+	if (len != -1)
+	{
+		modified_name[len] = '\0';
+	}
 
 	if (strcmp(argv[0], modified_name) != 0)
 	{
