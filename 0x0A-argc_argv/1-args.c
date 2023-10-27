@@ -22,7 +22,6 @@ int main(__attribute__((unused)) int argc, char *argv[])
 		count++;
 	}
 	printf("%d\n", count - 1);
-	_putchar('\n');
-
+	
 	return (0);
 }
