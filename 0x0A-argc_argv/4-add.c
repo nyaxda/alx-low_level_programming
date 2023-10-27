@@ -19,7 +19,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i, status;
+	int i;
 	unsigned int n, sum = 0;
 	char *endpointer;
 
@@ -32,8 +32,10 @@ int main(int argc, char *argv[])
 	{
 		n = strtoul(argv[i], &endpointer, 10);
 
-		if (*endpointer == '\0' && n != ULONG_MAX) {
+		if (*endpointer == '\0' && n != ULONG_MAX)
+		{
 			sum += n;
+		}
 		else
 		{
 			printf("Error\n");
