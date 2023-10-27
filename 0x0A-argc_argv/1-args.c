@@ -17,11 +17,13 @@ int main(__attribute__((unused)) int argc, char *argv[])
 {
 	int i;
 	int a = strlen(argv[0]);
+	int count = 0;
 
 	for (i = 0; i < a; i++)
 	{
-		_putchar(argv[0][i]);
+		count++;
 	}
+	printf("%d\n", count - 1);
 	_putchar('\n');
 
 	return (0);
