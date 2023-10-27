@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		status = (sscanf(argv[i], "%d", (unsigned int *)&n) == 1);
+		status = (sscanf(argv[i], "%u", (unsigned int *)&n) == 1);
 		if (status == 1)
 		{
 			sum += n;
