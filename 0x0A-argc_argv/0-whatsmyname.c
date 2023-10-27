@@ -17,7 +17,6 @@
 
 int main (__attribute__((unused)) int argc, char *argv[])
 {
-	int i;
 	char modified_name[1024];
 
 	readlink("/proc/self/exe", modified_name, sizeof(modified_name)-1);
