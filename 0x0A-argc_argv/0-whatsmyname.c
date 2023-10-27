@@ -15,11 +15,12 @@
  * Return: 0 on success
  */
 
-int main (__attribute__((unused)) int argc, char *argv[])
+int main(__attribute__((unused)) int argc, char *argv[])
 {
 	char modified_name[1024];
 
-	ssize_t len = readlink("/proc/self/exe", modified_name, sizeof(modified_name) - 1);
+	ssize_t len = readlink(
+		"/proc/self/exe", modified_name, sizeof(modified_name) - 1);
 
 	if (len != -1)
 	{
