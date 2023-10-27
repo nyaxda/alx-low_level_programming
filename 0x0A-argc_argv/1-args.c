@@ -15,11 +15,9 @@
 
 int main(__attribute__((unused)) int argc, char *argv[])
 {
-	int i;
-	int a = sizeof(argv) / sizeof(argv[0]);
 	int count = 0;
 
-	for (i = 0; i < a; i++)
+	while (argv[count] != NULL)
 	{
 		count++;
 	}
