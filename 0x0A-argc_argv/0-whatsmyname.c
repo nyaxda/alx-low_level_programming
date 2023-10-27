@@ -25,8 +25,14 @@ int main(__attribute__((unused)) int argc, char *argv[]) {
 	{
 		name++;
 	}
-
-	printf("%s\n", name);
+	if (access(argv[0], X_OK) == 0)
+	{
+		printf("./%s\n", name);
+	}
+	else
+	{
+		printf("%s\n", argv[0]);
+	}
 
 	return 0;
 }
