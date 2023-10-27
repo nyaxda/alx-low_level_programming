@@ -26,12 +26,9 @@ int main (__attribute__((unused)) int argc, char *argv[])
 	{
 		argv[0] = modified_name;
 	}
-
-	for (i = 0; argv[0][i] != '\0'; i++)
 	{
-		_putchar(argv[0][i]);
+		printf("%s\n", argv[0]);
 	}
-	_putchar('\n');
 
 	return (0);
 }
