@@ -15,10 +15,11 @@
  * Return: 0 on success
  */
 
-int main(__attribute__((unused)) int argc, char *argv[]) {
+int main(__attribute__((unused)) int argc, char *argv[]) 
+{
 	char *name = strrchr(argv[0], '/');
 	char path[4096];
-	
+
 	if (name == NULL)
 	{
 		name = argv[0];
@@ -27,11 +28,11 @@ int main(__attribute__((unused)) int argc, char *argv[]) {
 	{
 		name++;
 	}
-	
+
 	if (readlink("/proc/self/exe", path, sizeof(path)) == -1)
 	{
 		perror("readlink");
-		return 1;
+		return (1);
 	}
 
 	path[sizeof(path) - 1] = '\0';
@@ -45,5 +46,5 @@ int main(__attribute__((unused)) int argc, char *argv[]) {
 		printf("%s\n", argv[0]);
 	}
 
-	return 0;
+	return (0);
 }
