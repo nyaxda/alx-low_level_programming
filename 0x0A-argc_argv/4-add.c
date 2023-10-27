@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include "main.h"
 
 /**
@@ -31,10 +29,10 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		status = sscanf (argv[i], "%d", &n);
+		status = (sscanf(argv[i], "%d", (unsigned int *)&n) == 1);
 		if (status == 1)
 		{
-			sum += atoi(argv[i]);
+			sum += n;
 		}
 		else
 		{
