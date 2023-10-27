@@ -19,8 +19,8 @@
 
 int main(int argc, char *argv[])
 {
-	int i, status, n;
-	int sum = 0;
+	int i, status;
+	unsigned int n, sum = 0;
 
 	if (argc < 2)
 	{
@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		status = (sscanf(argv[i], "%u", (unsigned int *)&n) == 1);
-		if (status == 1)
+		status = kstrtouint(argv[i], 10, &n);
+		if (status == 0)
 		{
 			sum += n;
 		}
