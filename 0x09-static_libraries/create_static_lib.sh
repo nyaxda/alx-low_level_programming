@@ -1,4 +1,4 @@
 #!/bin/bash
-gcc -c *.c
+find . -type f -name "*.c" - exec gcc -c {} \;
 ar -rc liball.a *.o
 ranlib liball.a
