@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
 	int money;
 	int coins;
-	
+
 	coins = 0;
 
 	if (argc == 1 || argc > 2)
