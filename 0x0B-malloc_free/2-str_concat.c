@@ -20,7 +20,7 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *m;
-	int i;
+	size_t i;
 
 	if (s1 == NULL)
 	{
@@ -39,7 +39,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		for (i = 0; i < strlen(str); i++)
+		for (i = 0; i < strlen(s1); i++)
 		{
 			m[i] = s1[i];
 		}
