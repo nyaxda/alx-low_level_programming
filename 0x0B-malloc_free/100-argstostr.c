@@ -16,6 +16,7 @@
 char *argstostr(int ac, char **av)
 {
 	char *str;
+	int i;
 
 	if (ac == 0 || av == NULL)
 	{
@@ -29,7 +30,7 @@ char *argstostr(int ac, char **av)
 	}
 	else
 	{
-		for (int i = 0; i < ac; i++)
+		for (i = 0; i < ac; i++)
 		{
 			str[i] = *av[i];
 		}
