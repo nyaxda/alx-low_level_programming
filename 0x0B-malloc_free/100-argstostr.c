@@ -23,6 +23,16 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
+	if (ac == 1) 
+	{
+    	str = malloc(strlen(av[0]) + 1);
+    	if (str == NULL) 
+		{
+      		return (NULL);
+    	}
+		strcpy(str, av[0]);
+    	return (str);
+	}
 
 	for (i = 0; i < ac; i++)
 	{
