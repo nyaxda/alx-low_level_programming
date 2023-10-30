@@ -18,7 +18,7 @@
 char **strtow(char *str)
 {
 	char **m;
-	int i, j, k, l, count;
+	int i, j, k, count;
 
 	if (str == NULL || str[0] == '\0')
 	{
@@ -36,7 +36,7 @@ char **strtow(char *str)
 			}
 		}
 	}
-	m = (char **)malloc((word_count + 1) * sizeof(char *));
+	m = (char **)malloc((count + 1) * sizeof(char *));
 	if (m == NULL)
 	{
 		return (NULL);
