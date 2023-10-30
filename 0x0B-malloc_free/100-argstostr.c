@@ -45,10 +45,10 @@ char *argstostr(int ac, char **av)
 		{
 			aout[out] = '\n';
 			i++;
-			ia++;
+			out++;
 			j = 0;
 		}
-		if (ia < c - 1)
+		if (out < c - 1)
 			aout[out] = av[i][j];
 	}
 	aout[out] = '\0';
