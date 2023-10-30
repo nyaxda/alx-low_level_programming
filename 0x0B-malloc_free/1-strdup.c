@@ -21,7 +21,7 @@ char *_strdup(char *str)
 {
 	char *m;
 	unsigned int i;
-	
+
 	if (str == NULL)
 	{
 		return (NULL);
