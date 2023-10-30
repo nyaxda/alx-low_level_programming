@@ -4,7 +4,8 @@
 #include "main.h"
 
 /**
- * create_array -  creates an array of chars, and initializes it with a specific char.
+ * create_array -  creates an array of chars, and initializes
+ * it with a specific char.
  *
  * Description: function that creates an array of chars,
  * and initializes it with a specific char.
@@ -20,7 +21,7 @@ char *create_array(unsigned int size, char c)
 	char *m = malloc(size * sizeof(char));
 	unsigned int i;
 
-	if (m == NULL)
+	if (size == NULL)
 	{
 		return (NULL);
 	}
@@ -32,5 +33,5 @@ char *create_array(unsigned int size, char c)
 		}
 		return (m);
 	}
-	free (m);
+	free(m);
 }
