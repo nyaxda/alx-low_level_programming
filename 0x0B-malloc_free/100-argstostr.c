@@ -30,7 +30,7 @@ char *argstostr(int ac, char **av)
 		{
       		return (NULL);
     	}
-		strcpy(str, av[0]);
+		strcat(str, av[0]);
     	return (str);
 	}
 
