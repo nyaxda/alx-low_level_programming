@@ -35,7 +35,7 @@ char *argstostr(int ac, char **av)
 		{
 			for (j = 0; j < strlen(av[i]); j++)
 			{
-				str[i][j] = av[i][j];
+				str[i][j] = *av[i][j];
 			}
 			str[i] = *av[i];
 		}
