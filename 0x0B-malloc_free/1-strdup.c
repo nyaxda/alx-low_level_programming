@@ -22,7 +22,7 @@ char *_strdup(char *str)
     char *m = malloc(strlen(str) + 1);
     unsigned int i;
 
-    if (str == NULL || m == NULL)
+    if (m == NULL)
     {
         return (NULL);
     }
@@ -33,5 +33,6 @@ char *_strdup(char *str)
             m[i] = str[i];
         }
     }
+	m[i] = '\0';
     return (m);
 }
