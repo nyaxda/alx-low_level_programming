@@ -17,14 +17,14 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	char *m = malloc(size * sizeof(char));
-	if (m == NULL)
+	c = malloc(size * sizeof(char));
+	if (c == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
-		return (m);
+		return (c);
 	}
-	free (m);
+	free (c);
 }
