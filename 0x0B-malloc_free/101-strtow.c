@@ -18,7 +18,8 @@
 char **strtow(char *str)
 {
 	char **m;
-	int i, j, k, count;
+	int i, k, count;
+	size_t j;
 
 	if (str == NULL || str[0] == '\0')
 	{
