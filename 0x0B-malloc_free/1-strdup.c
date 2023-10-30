@@ -15,23 +15,23 @@
  *
  * Return: NULL if str = NULL. On success, the _strdup function returns
  * a pointer to the duplicated string. It returns NULL if insufficient
- *
+ * 
  */
 char *_strdup(char *str)
 {
-	char *m;
-	unsigned int i;
+    char *m = malloc(strlen(str) + 1);
+    unsigned int i;
 
-	if (str == NULL)
-	{
-		return (NULL);
-	}
-
-	*m = malloc(strlen(str) * sizeof(char));
-
-	for (i = 0; i < strlen(str); i++)
-	{
-		m[i] = str[i];
-	}
-	return (m);
+    if (str == NULL || m == NULL)
+    {
+        return (NULL);
+    }
+    else
+    {
+        for (i = 0; i < strlen(str); i++)
+        {
+            m[i] = str[i];
+        }
+    }
+    return (m);
 }
