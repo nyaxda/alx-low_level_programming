@@ -27,23 +27,35 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		length += strlen(av[i]) + 1;
+		if (av[i] == NULL)
+		{
+			return (NULL);
+		}
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			length++;
+		}
 	}
 
-	str = (char *)malloc(length * sizeof(char) + ac + 1);
+	str = (char *)malloc((length + 1) * sizeof(char));
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-
-	for (i = 0; i < ac; i++)
+	for (i = j = k = 0; k < length; i++, k++)
 	{
-		for (k = 0; k < strlen(av[i]); k++)
+		if (av[i][j] == '\0')
 		{
-			str[j++] = av[i][k];
+			str[k] = '\n';
+			j = 0;
+			i++;
+			k++;
 		}
-		str[j++] = '\n';
+		if (k < length - 1)
+		{
+			str[k] = av[i][j];
+		}
 	}
-	str[j] = '\0';
+	str[k] = '\0';
 	return (str);
 }
