@@ -32,6 +32,5 @@ char *create_array(unsigned int size, char c)
 			m[i] = c;
 		}
 	}
-	free(m);
 	return (m);
 }
