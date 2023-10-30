@@ -24,21 +24,21 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 
-	str = malloc(sizeof(char) * (ac + 1));
+	str = malloc(sizeof(char) * (ac + 1);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	else
+	j = 0;
+	for (i = 0; i < ac; i++)
 	{
-		for (i = 0; i < ac; i++)
+		for (j = 0; j < strlen(av[i]); j++)
 		{
-			for (j = 0; j < strlen(av[i]); j++)
-			{
-				str[i] = av[i][j];
-			}
+			str[j] = av[i][j];
 		}
-		str[i] = '\0';
+		str[j] = '\n';
+		j++;
 	}
+	str[j] = '\0';
 	return (str);
 }
