@@ -26,6 +26,30 @@ int check_digit(char *s)
 }
 
 /**
+ * get_size - Calculate the number of digits in an integer.
+ * @num: The integer to calculate the size for.
+ *
+ * Return: The number of digits in the integer.
+ */
+int get_size(int num)
+{
+	int size = 0;
+
+	if (num == 0)
+	{
+		return (1);
+	}
+
+	while (num != 0)
+	{
+		num /= 10;
+		size++;
+	}
+
+	return (size);
+}
+
+/**
  * multiply - Multiply two integers
  * @num1: The first integer to multiply.
  * @num2: The second integer to multiply.
