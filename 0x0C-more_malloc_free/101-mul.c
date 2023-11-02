@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
 		error();
 	}
 
-	multiply(&num1, &num2, result, size1, size2);
+	multiply(num1, num2, result, size1, size2);
 	i = 0;
 
 	while (result[i] == 0)
