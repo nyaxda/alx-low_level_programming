@@ -11,13 +11,13 @@ int check_digit(char *s)
 {
 	if (*s == '\0')
 	{
-		return 0;
+		return (0);
 	}
 	while (*s != '\0')
 	{
 		if (*s < '0' || *s > '9')
 		{
-			return 0;
+			return (0);
 		}
 		s++;
 	}
@@ -36,7 +36,7 @@ int get_size(int num)
 
 	if (num == 0)
 	{
-		return 1;
+		return (1);
 	}
 
 	while (num != 0)
@@ -123,6 +123,7 @@ int main(int argc, char *argv[])
 	multiply(num1, num2, result, size1, size2);
 
 	int i = 0;
+	
 	while (result[i] == 0 && i < size1 + size2 - 1)
 	{
 		i++;
@@ -135,5 +136,5 @@ int main(int argc, char *argv[])
 	printf("\n");
 
 	free(result);
-	return 0;
+	return (0);
 }
