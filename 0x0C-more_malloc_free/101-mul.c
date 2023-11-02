@@ -220,16 +220,13 @@ int main(int argumentCount, char *arguments[])
 		addResults(finalResult, nextResult, size - 1);
 		leadingZeros++;
 	}
-
 	for (int index = 0; finalResult[index]; index++)
 	{
 		if (finalResult[index] != 'X')
 			putchar(finalResult[index]);
 	}
 	putchar('\n');
-
 	free(nextResult);
 	free(finalResult);
-
 	return (0);
 }
