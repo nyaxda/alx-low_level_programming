@@ -36,7 +36,7 @@ int check_digit(char *s)
 void multiply(int *num1, int *num2, int *result, int size1, int size2)
 {
 	int i, j, carry, product;
-	
+
 	for (i = size1 - 1; i >= 0; i--)
 	{
 		carry = 0;
