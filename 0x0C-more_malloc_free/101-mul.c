@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "main.h"
 
+void multiply(int num1, int num2, int *result, int size1, int size2);
+int get_size(int num);
+int check_digit(char *s);
+void error(void);
+
 /**
  * check_digit - Check if a string is composed of digits.
  * @s: The string to check.
