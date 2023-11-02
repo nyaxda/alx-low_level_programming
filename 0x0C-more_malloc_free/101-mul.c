@@ -51,6 +51,18 @@ void multiply(int *num1, int *num2, int *result, int size1, int size2)
 }
 
 /**
+ * error - Print the error message and exit with code 98.
+ */
+void error(void)
+{
+    for (int i = 0; "Error\n"[i] != '\0'; i++)
+    {
+        _putchar("Error\n"[i]);
+    }
+    exit(98);
+}
+
+/**
  * main - multiples two positive numbers.
  *
  * Description: program that multiplies two positive numbers.
@@ -82,40 +94,29 @@ int main(int argc, char *argv[])
 	}
 	if (check_digit(argv[1]) == 0 || check_digit(argv[2]) == 0)
 	{
-		for (i = 0; "Error\n"[i] != '\0'; i++)
-		{
-			_putchar("Error\n"[i]);
-		}
-		exit(98);
+		error();
 	}
 	size 1 = strlen(num1);
 	size 2 = strlen(num2);
 	result = malloc(sizeof(int) * (size1 + size2));
-
 	if (result == NULL)
 	{
-		for (i = 0; "Error\n"[i] != '\0'; i++)
-		{
-			_putchar("Error\n"[i]);
-		}
-		exit(98);
+		error();
 	}
 
 	multiply(num1, num2, result, size1, size2);
-
 	i = 0;
+
 	while (result[i] == 0)
 	{
 		i++;
 	}
-
+	
 	for (; i < size1 + size2; i++)
 	{
 		_putchar(result[i] + '0');
 	}
-
 	_putchar('\n');
 	free(result);
-
 	return (0);
 }
