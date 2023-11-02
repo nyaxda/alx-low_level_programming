@@ -1,145 +1,179 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-void multiply(int num1, int num2, int *result, int size1, int size2);
-int get_size(int num);
-int check_digit(char *s);
-void error(void);
+int findStringLength(char *str);
+char *initializeCharArray(int size);
+char *skipLeadingZeros(char *str);
+void calculateProduct(char *result, char *multiplier, int digit, int leadingZeros);
+void addResults(char *finalResult, char *nextResult, int nextResultLength);
 
-/**
- * check_digit - Check if a string is composed of digits.
- * @s: The string to check.
- * Return: 1 if composed of digits, 0 otherwise.
- */
-int check_digit(char *s)
+int findStringLength(char *str)
 {
-	if (*s == '\0')
+	int length = 0;
+
+	while (*str++)
+		length++;
+
+	return (length);
+}
+
+char *initializeCharArray(int size)
+{
+	char *arr;
+	int index;
+
+	arr = malloc(sizeof(char) * size);
+
+	if (arr == NULL)
+		exit(98);
+
+	for (index = 0; index < (size - 1); index++)
+		arr[index] = 'X';
+
+	arr[index] = '\0';
+
+	return (arr);
+}
+
+char *skipLeadingZeros(char *str)
+{
+	while (*str && *str == '0')
+		str++;
+
+	return (str);
+}
+
+int convertCharToInt(char c)
+{
+	int digit = c - '0';
+
+	if (digit < 0 || digit > 9)
 	{
+		printf("Error\n");
+		exit(98);
+	}
+
+	return (digit);
+}
+
+void calculateProduct(char *result, char *multiplier, int digit, int leadingZeros)
+{
+	int multiplierLength, num, tens = 0;
+
+	multiplierLength = findStringLength(multiplier) - 1;
+	multiplier += multiplierLength;
+
+	while (*result)
+	{
+		*result = 'X';
+		result++;
+	}
+
+	result--;
+
+	while (leadingZeros--)
+	{
+		*result = '0';
+		result--;
+	}
+
+	for (; multiplierLength >= 0; multiplierLength--, multiplier--, result--)
+	{
+		if (*multiplier < '0' || *multiplier > '9')
+		{
+			printf("Error\n");
+			exit(98);
+		}
+
+		num = (*multiplier - '0') * digit;
+		num += tens;
+		*result = (num % 10) + '0';
+		tens = num / 10;
+	}
+
+	if (tens)
+		*result = (tens % 10) + '0';
+}
+
+void addResults(char *finalResult, char *nextResult, int nextResultLength)
+{
+	int num, tens = 0;
+
+	while (*(finalResult + 1))
+		finalResult++;
+
+	while (*(nextResult + 1))
+		nextResult++;
+
+	for (; *finalResult != 'X'; finalResult--)
+	{
+		num = (*finalResult - '0') + (*nextResult - '0');
+		num += tens;
+		*finalResult = (num % 10) + '0';
+		tens = num / 10;
+
+		nextResult--;
+		nextResultLength--;
+	}
+
+	for (; nextResultLength >= 0 && *nextResult != 'X'; nextResultLength--)
+	{
+		num = (*nextResult - '0');
+		num += tens;
+		*finalResult = (num % 10) + '0';
+		tens = num / 10;
+
+		finalResult--;
+		nextResult--;
+	}
+
+	if (tens)
+		*finalResult = (tens % 10) + '0';
+}
+
+int main(int argumentCount, char *arguments[])
+{
+	char *finalResult, *nextResult;
+	int size, digit, leadingZeros = 0;
+
+	if (argumentCount != 3)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
+	if (*(arguments[1]) == '0')
+		arguments[1] = skipLeadingZeros(arguments[1]);
+	if (*(arguments[2]) == '0')
+		arguments[2] = skipLeadingZeros(arguments[2]);
+	if (*(arguments[1]) == '\0' || *(arguments[2]) == '\0')
+	{
+		printf("0\n");
 		return (0);
 	}
-	while (*s != '\0')
-	{
-		if (*s < '0' || *s > '9')
-		{
-			return (0);
-		}
-		s++;
-	}
-	return (1);
-}
 
-/**
- * get_size - Calculate the number of digits in an integer.
- * @num: The integer to calculate the size for.
- *
- * Return: The number of digits in the integer.
- */
-int get_size(int num)
-{
-	int size = 0;
+	size = findStringLength(arguments[1]) + findStringLength(arguments[2]);
+	finalResult = initializeCharArray(size + 1);
+	nextResult = initializeCharArray(size + 1);
 
-	if (num == 0)
+	for (int index = findStringLength(arguments[2]) - 1; index >= 0; index--)
 	{
-		return (1);
+		digit = convertCharToInt(*(arguments[2] + index));
+		calculateProduct(nextResult, arguments[1], digit, leadingZeros);
+		addResults(finalResult, nextResult, size - 1);
+		leadingZeros++;
 	}
 
-	while (num != 0)
+	for (int index = 0; finalResult[index]; index++)
 	{
-		num /= 10;
-		size++;
+		if (finalResult[index] != 'X')
+			putchar(finalResult[index]);
 	}
+	putchar('\n');
 
-	return (size);
-}
+	free(nextResult);
+	free(finalResult);
 
-/**
- * multiply - Multiply two integers
- * @num1: The first integer to multiply.
- * @num2: The second integer to multiply.
- * @result: the array to store the result.
- * @size1: The size of the first integer.
- * @size2: The size of the second integer.
- */
-void multiply(int num1, int num2, int *result, int size1, int size2)
-{
-	int i, j, carry, product;
-
-	for (i = size1 - 1; i >= 0; i--)
-	{
-		carry = 0;
-		for (j = size2 - 1; j >= 0; j--)
-		{
-			product = (num1 % 10) * (num2 % 10) + result[i + j + 1] + carry;
-			carry = product / 10;
-			result[i + j + 1] = product % 10;
-		}
-		result[i + j + 1] += carry;
-	}
-}
-
-/**
- * error - Print the error message and exit with code 98.
- */
-void error(void)
-{
-	printf("Error\n");
-	exit(98);
-}
-
-/**
- * main - multiples two positive numbers.
- *
- * Description: program that multiplies two positive numbers.
- * If the number of arguments is incorrect, print Error,
- * followed by a new line, and exit with a status of 98.
- * num1 and num2 should only be composed of digits.
- * If not, print Error, followed by a new line,
- * and exit with a status of 98
- *
- * @argc: no. of arguments passed to the program
- * @argv: argument vector of pointers to strings
- *
- * Return: If the number of arguments is incorrect, print Error,
- * followed by a new line, and exit with a status of 98
- */
-int main(int argc, char *argv[])
-{
-	int num1, num2, *result, size1, size2, i;
-
-	if (argc != 3)
-	{
-		error();
-	}
-	if (check_digit(argv[1]) == 0 || check_digit(argv[2]) == 0)
-	{
-		error();
-	}
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
-	size1 = get_size(num1);
-	size2 = get_size(num2);
-	result = malloc(sizeof(int) * (size1 + size2));
-	if (result == NULL)
-	{
-		error();
-	}
-
-	multiply(num1, num2, result, size1, size2);
-
-	i = 0;
-
-	while (result[i] == 0 && i < size1 + size2 - 1)
-	{
-		i++;
-	}
-
-	for (; i < size1 + size2; i++)
-	{
-		printf("%d", result[i]);
-	}
-	printf("\n");
-
-	free(result);
 	return (0);
 }
