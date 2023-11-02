@@ -97,7 +97,8 @@ int convertCharToInt(char c)
  * Description: If multiplier contains a non-digit, the function
  * exits with a status value of 98.
  */
-void calculateProduct(char *result, char *multiplier, int digit, int leadingZeros)
+void calculateProduct(char *result, char *multiplier,
+int digit, int leadingZeros)
 {
 	int multiplierLength, num, tens = 0;
 
