@@ -191,7 +191,7 @@ void addResults(char *finalResult, char *nextResult, int nextResultLength)
 int main(int argumentCount, char *arguments[])
 {
 	char *finalResult, *nextResult;
-	int size, digit, leadingZeros = 0;
+	int size, digit, leadingZeros = 0, index;
 
 	if (argumentCount != 3)
 	{
@@ -213,14 +213,14 @@ int main(int argumentCount, char *arguments[])
 	finalResult = initializeCharArray(size + 1);
 	nextResult = initializeCharArray(size + 1);
 
-	for (int index = findStringLength(arguments[2]) - 1; index >= 0; index--)
+	for (index = findStringLength(arguments[2]) - 1; index >= 0; index--)
 	{
 		digit = convertCharToInt(*(arguments[2] + index));
 		calculateProduct(nextResult, arguments[1], digit, leadingZeros);
 		addResults(finalResult, nextResult, size - 1);
 		leadingZeros++;
 	}
-	for (int index = 0; finalResult[index]; index++)
+	for (index = 0; finalResult[index]; index++)
 	{
 		if (finalResult[index] != 'X')
 			putchar(finalResult[index]);
