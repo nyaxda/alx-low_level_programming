@@ -26,36 +26,27 @@ int check_digit(char *s)
 }
 
 /**
- * number_processor - Process and print an integer using _putchar.
- * @num: The integer to be processed and printed.
+ * multiply - Multiply two integers
+ * @num1: The first integer to multiply.
+ * @num2: The second integer to multiply.
+ * @result: the array to store the result.
+ * @size1: The size of the first integer.
+ * @size2: The size of the second integer.
  */
-void number_processor(int num)
+void multiply(int *num1, int *num2, int *result, int size1, int size2)
 {
-	int count = 1;
-	int temp = num;
-
-	if (num < 0)
+	int i, j, carry, product;
+	for (i = size1 -1; i >= 0; i--)
 	{
-		_putchar('-');
-		num = -num;
-	}
-	if (num / 10)
-	{
-		while (temp / 10)
+		carry = 0;
+		for (j = size2 - 1; j >= 0; j--)
 		{
-			temp /= 10;
-			count *= 10;
+			product = num1[i] * num2[j] + result[i + j + 1] + carry;
+			carry = product / 10;
+			result[i + j + 1] = product % 10;
+			carry = product / 10;
 		}
-		while (count)
-		{
-			_putchar(num / count + '0');
-			num %= count;
-			count /= 10;
-		}
-	}
-	else
-	{
-		_putchar(num + '0');
+		result[i + j + 1] += carry;
 	}
 }
 
@@ -79,7 +70,7 @@ void number_processor(int num)
 int main(int argc, char *argv[])
 {
 	int i = 0;
-	int num1, num2, result;
+	int num1, num2, *result, size1, size2;
 
 	if (argc != 3)
 	{
@@ -89,25 +80,43 @@ int main(int argc, char *argv[])
 		}
 		exit(98);
 	}
-	else
+	if (check_digit(argv[1]) == 0 || check_digit(argv[2]) == 0)
 	{
-		while (i < argc)
+		for (i = 0; "Error\n"[i] != '\0'; i++)
 		{
-			if (check_digit(argv[i]) == 0)
-			{
-				for (i = 0; "Error\n"[i] != '\0'; i++)
-				{
-					_putchar("Error\n"[i]);
-				}
-				exit(98);
-			}
-			i++;
+			_putchar("Error\n"[i]);
 		}
+		exit(98);
 	}
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
-	result = num1 * num2;
-	number_processor(result);
+	size 1 = strlen(num1);
+	size 2 = strlen(num2);
+	result = malloc(sizeof(int) * (size1 + size2));
+
+	if (result == NULL)
+	{
+		for (i = 0; "Error\n"[i] != '\0'; i++)
+		{
+			_putchar("Error\n"[i]);
+		}
+		exit(98);
+	}
+
+	multiply(num1, num2, result, size1, size2);
+
+	i = 0;
+	while (result[i] == 0)
+	{
+		i++;
+	}
+
+	for (; i < size1 + size2; i++)
+	{
+		_putchar(result[i] + '0');
+	}
+
 	_putchar('\n');
+	free(result);
+
 	return (0);
 }
+	
