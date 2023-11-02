@@ -37,7 +37,7 @@ int get_size(int num)
 
 	if (num == 0)
 	{
-		return (1);
+		return (0);
 	}
 
 	while (num != 0)
@@ -57,7 +57,7 @@ int get_size(int num)
  * @size1: The size of the first integer.
  * @size2: The size of the second integer.
  */
-void multiply(int *num1, int *num2, int *result, int size1, int size2)
+void multiply(int num1, int num2, int *result, int size1, int size2)
 {
 	int i, j, carry, product;
 
@@ -66,10 +66,9 @@ void multiply(int *num1, int *num2, int *result, int size1, int size2)
 		carry = 0;
 		for (j = size2 - 1; j >= 0; j--)
 		{
-			product = num1[i] * num2[j] + result[i + j + 1] + carry;
+			product = (num1 % 10) * (num2 % 10) + result[i + j + 1] + carry;
 			carry = product / 10;
 			result[i + j + 1] = product % 10;
-			carry = product / 10;
 		}
 		result[i + j + 1] += carry;
 	}
