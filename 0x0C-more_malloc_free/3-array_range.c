@@ -9,7 +9,7 @@
  * Description: function that creates an array of integers.
  * The array created contains all the values from min
  * (included) to max (included), ordered from min to max.
- * 
+ *
  *@min: min value of the array.
  *@max: max value of the array.
  *
@@ -18,26 +18,26 @@
  */
 int *array_range(int min, int max)
 {
-    int *m, i;
+	int *m, i;
 
-    if (min > max)
-    {
-        return (NULL);
-    }
+	if (min > max)
+	{
+		return (NULL);
+	}
 
-    m = malloc((max - min + 1) * sizeof(int));
+	m = malloc((max - min + 1) * sizeof(int));
 
-    if (m == 0)
-    {
-        return (NULL);
-    }
+	if (m == 0)
+	{
+		return (NULL);
+	}
 
-    else
-    {
-        for (i = 0; i <= max - min; i++)
-        {
-            m[i] = min + i;
-        }
-    }
-    return (m);
+	else
+	{
+		for (i = 0; i <= max - min; i++)
+		{
+			m[i] = min + i;
+		}
+	}
+	return (m);
 }
