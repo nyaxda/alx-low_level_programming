@@ -100,7 +100,7 @@ void error(void)
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, *result, size1, size2;
+	int num1, num2, *result, size1, size2, i;
 
 	if (argc != 3)
 	{
@@ -122,7 +122,7 @@ int main(int argc, char *argv[])
 
 	multiply(num1, num2, result, size1, size2);
 
-	int i = 0;
+	i = 0;
 
 	while (result[i] == 0 && i < size1 + size2 - 1)
 	{
