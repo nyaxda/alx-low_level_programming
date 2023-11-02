@@ -8,6 +8,12 @@ char *skipLeadingZeros(char *str);
 void calculateProduct(char *result, char *multiplier, int digit, int leadingZeros);
 void addResults(char *finalResult, char *nextResult, int nextResultLength);
 
+/**
+ * findStringLength - Finds the length of a string.
+ * @str: The string to be measured.
+ *
+ * Return: The length of the string.
+ */
 int findStringLength(char *str)
 {
 	int length = 0;
@@ -18,6 +24,14 @@ int findStringLength(char *str)
 	return (length);
 }
 
+/**
+ * initializeCharArray - Creates an array of chars and initializes it with
+ *                      the character 'X'. Adds a terminating null byte.
+ * @size: The size of the array to be initialized.
+ *
+ * Description: If there is insufficient space, the function exits with a status of 98.
+ * Return: A pointer to the array.
+ */
 char *initializeCharArray(int size)
 {
 	char *arr;
@@ -36,6 +50,13 @@ char *initializeCharArray(int size)
 	return (arr);
 }
 
+/**
+ * skipLeadingZeros - Iterates through a string of numbers containing
+ *                   leading zeroes until it hits a non-zero number.
+ * @str: The string of numbers to be iterate through.
+ *
+ * Return: A pointer to the next non-zero element.
+ */
 char *skipLeadingZeros(char *str)
 {
 	while (*str && *str == '0')
@@ -44,6 +65,13 @@ char *skipLeadingZeros(char *str)
 	return (str);
 }
 
+/**
+ * convertCharToInt - Converts a digit character to a corresponding int.
+ * @c: The character to be converted.
+ *
+ * Description: If c is a non-digit, the function exits with a status of 98.
+ * Return: The converted int.
+ */
 int convertCharToInt(char c)
 {
 	int digit = c - '0';
@@ -57,6 +85,15 @@ int convertCharToInt(char c)
 	return (digit);
 }
 
+/**
+ * calculateProduct - Multiplies a string of numbers by a single digit.
+ * @result: The buffer to store the result.
+ * @multiplier: The string of numbers.
+ * @digit: The single digit.
+ * @leadingZeros: The necessary number of leading zeros.
+ *
+ * Description: If multiplier contains a non-digit, the function exits with a status value of 98.
+ */
 void calculateProduct(char *result, char *multiplier, int digit, int leadingZeros)
 {
 	int multiplierLength, num, tens = 0;
@@ -96,6 +133,12 @@ void calculateProduct(char *result, char *multiplier, int digit, int leadingZero
 		*result = (tens % 10) + '0';
 }
 
+/**
+ * addResults - Adds the numbers stored in two strings.
+ * @finalResult: The buffer storing the running final product.
+ * @nextResult: The next product to be added.
+ * @nextResultLength: The length of nextResult.
+ */
 void addResults(char *finalResult, char *nextResult, int nextResultLength)
 {
 	int num, tens = 0;
@@ -132,6 +175,15 @@ void addResults(char *finalResult, char *nextResult, int nextResultLength)
 		*finalResult = (tens % 10) + '0';
 }
 
+/**
+ * main - Multiplies two positive numbers.
+ * @argumentCount: The number of arguments passed to the program.
+ * @arguments: An array of pointers to the arguments.
+ *
+ * Description: If the number of arguments is incorrect or one number
+ *              contains non-digits, the function exits with a status of 98.
+ * Return: Always 0.
+ */
 int main(int argumentCount, char *arguments[])
 {
 	char *finalResult, *nextResult;
