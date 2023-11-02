@@ -81,6 +81,7 @@ void multiply(int *num1, int *num2, int *result, int size1, int size2)
 void error(void)
 {
 	int i;
+	
 	for (i = 0; "Error\n"[i] != '\0'; i++)
 	{
 		_putchar("Error\n"[i]);
