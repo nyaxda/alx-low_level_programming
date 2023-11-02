@@ -9,19 +9,19 @@
  */
 int check_digit(char *s)
 {
-    if (*s == '\0')
-    {
-        return 0;
-    }
-    while (*s != '\0')
-    {
-        if (*s < '0' || *s > '9')
-        {
-            return 0;
-        }
-        s++;
-    }
-    return (1);
+	if (*s == '\0')
+	{
+		return 0;
+	}
+	while (*s != '\0')
+	{
+		if (*s < '0' || *s > '9')
+		{
+			return 0;
+		}
+		s++;
+	}
+	return (1);
 }
 
 /**
@@ -32,20 +32,20 @@ int check_digit(char *s)
  */
 int get_size(int num)
 {
-    int size = 0;
+	int size = 0;
 
-    if (num == 0)
-    {
-        return 1;
-    }
+	if (num == 0)
+	{
+		return 1;
+	}
 
-    while (num != 0)
-    {
-        num /= 10;
-        size++;
-    }
+	while (num != 0)
+	{
+		num /= 10;
+		size++;
+	}
 
-    return (size);
+	return (size);
 }
 
 /**
@@ -58,19 +58,19 @@ int get_size(int num)
  */
 void multiply(int num1, int num2, int *result, int size1, int size2)
 {
-    int i, j, carry, product;
+	int i, j, carry, product;
 
-    for (i = size1 - 1; i >= 0; i--)
-    {
-        carry = 0;
-        for (j = size2 - 1; j >= 0; j--)
-        {
-            product = (num1 % 10) * (num2 % 10) + result[i + j + 1] + carry;
-            carry = product / 10;
-            result[i + j + 1] = product % 10;
-        }
-        result[i + j + 1] += carry;
-    }
+	for (i = size1 - 1; i >= 0; i--)
+	{
+		carry = 0;
+		for (j = size2 - 1; j >= 0; j--)
+		{
+			product = (num1 % 10) * (num2 % 10) + result[i + j + 1] + carry;
+			carry = product / 10;
+			result[i + j + 1] = product % 10;
+		}
+		result[i + j + 1] += carry;
+	}
 }
 
 /**
@@ -78,8 +78,8 @@ void multiply(int num1, int num2, int *result, int size1, int size2)
  */
 void error(void)
 {
-    printf("Error\n");
-    exit(98);
+	printf("Error\n");
+	exit(98);
 }
 
 /**
@@ -100,40 +100,40 @@ void error(void)
  */
 int main(int argc, char *argv[])
 {
-    int num1, num2, *result, size1, size2;
+	int num1, num2, *result, size1, size2;
 
-    if (argc != 3)
-    {
-        error();
-    }
-    if (check_digit(argv[1]) == 0 || check_digit(argv[2]) == 0)
-    {
-        error();
-    }
-    num1 = atoi(argv[1]);
-    num2 = atoi(argv[2];
-    size1 = get_size(num1);
-    size2 = get_size(num2);
-    result = malloc(sizeof(int) * (size1 + size2));
-    if (result == NULL)
-    {
-        error();
-    }
+	if (argc != 3)
+	{
+		error();
+	}
+	if (check_digit(argv[1]) == 0 || check_digit(argv[2]) == 0)
+	{
+		error();
+	}
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2];
+	size1 = get_size(num1);
+	size2 = get_size(num2);
+	result = malloc(sizeof(int) * (size1 + size2));
+	if (result == NULL)
+	{
+		error();
+	}
 
-    multiply(num1, num2, result, size1, size2);
+	multiply(num1, num2, result, size1, size2);
 
-    int i = 0;
-    while (result[i] == 0 && i < size1 + size2 - 1)
-    {
-        i++;
-    }
+	int i = 0;
+	while (result[i] == 0 && i < size1 + size2 - 1)
+	{
+		i++;
+	}
 
-    for (; i < size1 + size2; i++)
-    {
-        printf("%d", result[i]);
-    }
-    printf("\n");
+	for (; i < size1 + size2; i++)
+	{
+		printf("%d", result[i]);
+	}
+	printf("\n");
 
-    free(result);
-    return 0;
+	free(result);
+	return 0;
 }
