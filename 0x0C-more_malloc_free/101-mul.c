@@ -56,7 +56,8 @@ void multiply(int *num1, int *num2, int *result, int size1, int size2)
  */
 void error(void)
 {
-	for (int i = 0; "Error\n"[i] != '\0'; i++)
+	int i;
+	for (i = 0; "Error\n"[i] != '\0'; i++)
 	{
 		_putchar("Error\n"[i]);
 	}
@@ -97,8 +98,8 @@ int main(int argc, char *argv[])
 	{
 		error();
 	}
-	size 1 = strlen(num1);
-	size 2 = strlen(num2);
+	size1 = strlen(num1);
+	size2 = strlen(num2);
 	result = malloc(sizeof(int) * (size1 + size2));
 	if (result == NULL)
 	{
