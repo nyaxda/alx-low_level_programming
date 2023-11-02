@@ -5,7 +5,8 @@
 int findStringLength(char *str);
 char *initializeCharArray(int size);
 char *skipLeadingZeros(char *str);
-void calculateProduct(char *result, char *multiplier, int digit, int leadingZeros);
+void calculateProduct(char *result, char *multiplier,
+int digit, int leadingZeros);
 void addResults(char *finalResult, char *nextResult, int nextResultLength);
 
 /**
@@ -29,7 +30,8 @@ int findStringLength(char *str)
  *                      the character 'X'. Adds a terminating null byte.
  * @size: The size of the array to be initialized.
  *
- * Description: If there is insufficient space, the function exits with a status of 98.
+ * Description: If there is insufficient space, the function
+ * exits with a status of 98.
  * Return: A pointer to the array.
  */
 char *initializeCharArray(int size)
@@ -92,7 +94,8 @@ int convertCharToInt(char c)
  * @digit: The single digit.
  * @leadingZeros: The necessary number of leading zeros.
  *
- * Description: If multiplier contains a non-digit, the function exits with a status value of 98.
+ * Description: If multiplier contains a non-digit, the function
+ * exits with a status value of 98.
  */
 void calculateProduct(char *result, char *multiplier, int digit, int leadingZeros)
 {
