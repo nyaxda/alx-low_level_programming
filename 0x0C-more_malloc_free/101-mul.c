@@ -4,8 +4,8 @@
 #include "main.h"
 
 /**
- * is_digit - Check if a string is composed of digits.
- * @str: The string to check.
+ * check_digit - Check if a string is composed of digits.
+ * @s: The string to check.
  * Return: 1 if composed of digits, 0 otherwise.
  */
 int check_digit(char *s)
