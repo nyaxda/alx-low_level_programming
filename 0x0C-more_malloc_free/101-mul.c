@@ -74,7 +74,7 @@ void number_processor(int num)
  *
  * Return: If the number of arguments is incorrect, print Error,
  * followed by a new line, and exit with a status of 98
- * */
+ */
 
 int main(int argc, char *argv[])
 {
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 		{
 			_putchar("Error\n"[i]);
 		}
-		exit (98);
+		exit(98);
 	}
 	else
 	{
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
 				{
 					_putchar("Error\n"[i]);
 				}
-				exit (98);
+				exit(98);
 			}
 			i++;
 		}
