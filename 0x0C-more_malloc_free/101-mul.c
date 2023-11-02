@@ -111,7 +111,7 @@ int main(int argc, char *argv[])
 		error();
 	}
 	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2];
+	num2 = atoi(argv[2]);
 	size1 = get_size(num1);
 	size2 = get_size(num2);
 	result = malloc(sizeof(int) * (size1 + size2));
