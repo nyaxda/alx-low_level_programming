@@ -17,7 +17,7 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new;
-	int length1, length2;
+	int i, length1, length2;
 
 	length1 = 0;
 	while (name[length1] != '\0') {
@@ -41,7 +41,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(new);
 		return (NULL);
 	}
-	int i;
 	for (i = 0; i < length1; i++)
 	{
 		new->name[i] = name[i];
