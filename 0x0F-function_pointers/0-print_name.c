@@ -10,7 +10,7 @@
  * @name: string to print
  * @f: function pointer
  *
- * Return:  void
+ * Return: void
  */
 void print_name(char *name, void (*f)(char *))
 {
