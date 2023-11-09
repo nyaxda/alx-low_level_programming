@@ -54,6 +54,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int j = 0, k;
 	const char  variables[] = "cifs";
+	char *separator = "";
 	va_list args;
 
 	va_start(args, format);
@@ -63,14 +64,15 @@ void print_all(const char * const format, ...)
 		k = 0;
 		while (variables[k])
 			{
-			if (format[j] == variables[k] && k > 1)
+			if (format[j] == variables[k] && k > 0)
 			{
-				printf(", ");
+				printf("%s", separator);
 				break;
 			}
 			k++;
 		}
 		print_variable(format[j], args);
+		separator = ", ";
 		j++;
 	}
 	printf("\n");
