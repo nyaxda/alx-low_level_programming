@@ -15,6 +15,8 @@
 
 void print_variable(const char format, va_list args)
 {
+	char *s;
+
 	switch (format)
 	{
 		case 'c':
@@ -27,7 +29,7 @@ void print_variable(const char format, va_list args)
 			printf("%f", va_arg(args, double));
 			break;
 		case 's':
-			char *s = va_arg(args, char *);
+			s = va_arg(args, char *);
 			if (!s)
 			{
 				printf("(nil)");
