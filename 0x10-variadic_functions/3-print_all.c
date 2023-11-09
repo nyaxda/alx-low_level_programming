@@ -13,7 +13,7 @@
 */
 void print_all(const char * const format, ...)
 {
-	unsigned int j = 0, l = 0, k;
+	unsigned int j = 0, l, k;
 	char *s;
 	const char  variables[] = "cifs";
 	va_list args;
