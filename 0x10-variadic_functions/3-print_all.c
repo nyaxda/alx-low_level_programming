@@ -25,7 +25,7 @@ void print_all(const char * const format, ...)
 		k = 0;
 		while (variables[k])
 		{
-			if (format[j] == variables[k] && l)
+			if (format[j] == variables[k] && k > 0)
 			{
 				printf(", ");
 				break;
@@ -35,22 +35,29 @@ void print_all(const char * const format, ...)
 		switch (format[j])
 		{
 			case 'c':
-				printf("%c", va_arg(args, int), l = 1);
+				printf("%c", va_arg(args, int));
+				l = 1;
 				break;
 			case 'i':
-				printf("%d", va_arg(args, int), l = 1);
+				printf("%d", va_arg(args, int));
+				l = 1;
 				break;
 			case 'f':
-				printf("%f", va_arg(args, double), l = 1);
+				printf("%f", va_arg(args, double));
+				l = 1;
 				break;
 			case 's':
-				s = va_arg(args, char *), l = 1;
+				s = va_arg(args, char *);
 				if (s == NULL)
 				{
 					printf("(nil)");
 					break;
 				}
 				printf("%s", s);
+				l = 1;
+				break;
+			default:
+				l = 0;
 				break;
 		}
 		j++;
