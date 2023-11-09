@@ -61,7 +61,7 @@ void print_all(const char * const format, ...)
 		k = 0;
 		while (variables[k])
 			{
-			if (format[j] == variables[k] && k > 0)
+			if (format[j] == variables[k] && k > 1)
 			{
 				printf(", ");
 				break;
