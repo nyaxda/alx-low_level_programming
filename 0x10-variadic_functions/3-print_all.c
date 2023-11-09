@@ -36,6 +36,8 @@ void print_variable(const char format, va_list args)
 			}
 			printf("%s", s);
 			break;
+		default:
+			break;
 	}
 }
 
