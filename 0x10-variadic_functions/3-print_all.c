@@ -13,7 +13,7 @@
 */
 void print_all(const char * const format, ...)
 {
-	unsigned int j = 0, l, k;
+	unsigned int j = 0, k;
 	char *s;
 	const char  variables[] = "cifs";
 	va_list args;
@@ -36,15 +36,12 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				printf("%c", va_arg(args, int));
-				l = 1;
 				break;
 			case 'i':
 				printf("%d", va_arg(args, int));
-				l = 1;
 				break;
 			case 'f':
 				printf("%f", va_arg(args, double));
-				l = 1;
 				break;
 			case 's':
 				s = va_arg(args, char *);
@@ -54,10 +51,8 @@ void print_all(const char * const format, ...)
 					break;
 				}
 				printf("%s", s);
-				l = 1;
 				break;
 			default:
-				l = 0;
 				break;
 		}
 		j++;
