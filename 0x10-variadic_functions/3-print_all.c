@@ -34,7 +34,8 @@ void print_all(const char * const format, ...)
 		}
 		switch (format[j])
 		{
-			case 'c': printf("%c", va_arg(args, int));
+			case 'c':
+				printf("%c", va_arg(args, int));
 				break;
 			case 'i':
 				printf("%d", va_arg(args, int));
@@ -44,10 +45,9 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				s = va_arg(args, char *);
-				if (s == NULL)
+				if (!s)
 				{
 					printf("(nil)");
-					break;
 				}
 				printf("%s", s);
 				break;
