@@ -25,7 +25,7 @@ int print_string(va_list args)
 
 	if (s == NULL)
 	{
-		return (-1);
+		return (0);
 	}
 	while (*s != '\0')
 	{
@@ -47,6 +47,61 @@ int print_percent(va_list args)
 	write(1, "%", 1);
 	return (1);
 }
+/**
+ * print_integer - prints an integer
+ * @args: integer to print
+ * Return: number of characters printed
+ */
+int print_integer(va_list args)
+{
+	int h = va_arg(args, int), i = 0, temp = h, size = 0, j, len;
+	ssize_t bytes;
+
+	while (temp != 0)
+	{
+		temp /= 10;
+		size++;
+	}
+
+	char *s = malloc((size + 1) * sizeof(char));
+	if (s == NULL)
+	{
+		return (0);
+	}
+	if (h < 0)
+	{
+		s[i++] = '-';
+		h = -h;
+	}
+	else if (h == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
+	while (size > 0)
+	{
+		s[i++] = h % 10 + '0';
+		h /= 10;
+		size--;
+	}
+	s[i] = '\0';
+	len = i;
+	for (i = 0, j = len - 1; i < j; i++, j--)
+	{
+		temp = s[i];
+		s[i] = s[j];
+		s[j] = temp;
+	}
+	bytes = write(1, s, len);
+	if (bytes == -1)
+	{
+		free(s);
+		return (0);
+	}
+	free(s);
+	return (len);
+}
+
 /**
  * _printf - prints anything
  * @format: list of argument types passed to the function
@@ -87,6 +142,8 @@ int _printf(const char *format, ...)
 				print += print_string(args);
 			else if (*format == '%')
 				print += print_percent(args);
+			else if (*format == 'd' || *format == 'i')
+				print += print_integer(args);
 			else
 			{
 				write(1, "%", 1);
