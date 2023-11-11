@@ -9,6 +9,7 @@
 int print_character(va_list args)
 {
 	char c;
+
 	c = va_arg(args, int);
 	write(1, &c, 1);
 	return (1);
@@ -31,7 +32,7 @@ int print_string(va_list args)
 	while (*str != '\0')
 	{
 		write(1, str, 1);
-		len ++;
+		len++;
 		str++;
 	}
 	return (len);
@@ -63,7 +64,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while(*format)
+	while (*format)
 	{
 		if (*format != '%')
 		{
@@ -74,25 +75,15 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (format == '\0')
-			{
 				break;
-			}
 			if (*format == 'c')
-			{
 				print += print_character(args);
-			}
 			else if (*format == 's')
-			{
 				print += print_string(args);
-			}
 			else if (*format == '%')
-			{
 				print += print_percent(args);
-			}
 			else
-			{
 				write(1, format, 1);
-			}
 		}
 		format++;
 	}
