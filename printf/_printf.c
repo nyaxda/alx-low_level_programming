@@ -8,9 +8,7 @@
  */
 int print_character(va_list args)
 {
-	char c;
-
-	c = va_arg(args, int);
+	char c = va_arg(args, int);
 	write(1, &c, 1);
 	return (1);
 }
@@ -22,18 +20,18 @@ int print_character(va_list args)
  */
 int print_string(va_list args)
 {
-	char *str = va_arg(args, char*);
+	char *s = va_arg(args, char *);
 	int len = 0;
 
-	if (str == NULL)
+	if (s == NULL)
 	{
 		return (-1);
 	}
-	while (*str != '\0')
+	while (*s != '\0')
 	{
-		write(1, str, 1);
+		write(1, s, 1);
 		len++;
-		str++;
+		s++;
 	}
 	return (len);
 }
@@ -45,8 +43,8 @@ int print_string(va_list args)
 */
 int print_percent(va_list args)
 {
-	(void)args;
-	write(1, "%", 1);
+	char c = '%'
+	write(1, &c, 1);
 	return (1);
 }
 /**
@@ -56,8 +54,9 @@ int print_percent(va_list args)
  */
 int _printf(const char *format, ...)
 {
-	int print = 0;
+	int print = 0, prev = 0;
 	va_list args;
+	ssize_t bytes;
 
 	if (format == NULL)
 		return (-1);
@@ -66,10 +65,16 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-		if (*format != '%')
+		if (*format != '%' || prev)
 		{
-			write(1, format, 1);
+			bytes = write(1, format, 1);
+			if (bytes == -1)
+				{
+					va_end(args);
+					return (-1);
+				}
 			print++;
+			prev = 0;
 		}
 		else
 		{
@@ -83,7 +88,11 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 				print += print_percent(args);
 			else
+			{
+				write(1, "%", 1);
 				write(1, format, 1);
+				print += 2;
+			}
 		}
 		format++;
 	}
