@@ -17,7 +17,7 @@ int print_character(va_list args)
 
 /**
  * print_string - prints a string
- * @arg s: string to print
+ * @args: string to print
  * Return: number of characters printed
  */
 int print_string(va_list args)
