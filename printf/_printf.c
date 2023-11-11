@@ -65,7 +65,7 @@ int print_integer(va_list args)
 		size++;
 	}
 
-	s = malloc((size + 1) * sizeof(char));
+	s = malloc((size + 2) * sizeof(char));
 	if (s == NULL)
 	{
 		return (0);
@@ -78,6 +78,7 @@ int print_integer(va_list args)
 	else if (h == 0)
 	{
 		write(1, "0", 1);
+		free(s);
 		return (1);
 	}
 	while (size > 0)
