@@ -57,6 +57,7 @@ int print_integer(va_list args)
 {
 	int h = va_arg(args, int), i = 0, temp = h, size = 0, j, len;
 	ssize_t bytes;
+	char *s;
 
 	while (temp != 0)
 	{
@@ -64,7 +65,7 @@ int print_integer(va_list args)
 		size++;
 	}
 
-	char *s = malloc((size + 1) * sizeof(char));
+	s = malloc((size + 1) * sizeof(char));
 	if (s == NULL)
 	{
 		return (0);
