@@ -6,7 +6,7 @@
 struct node
 {
     char *str;
-    int data;
+    size_t len;
     struct node *next;
 };
 typedef struct node list_t;
