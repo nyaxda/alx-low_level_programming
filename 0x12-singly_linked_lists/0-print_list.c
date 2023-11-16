@@ -13,15 +13,7 @@
 */
 #include "lists.h"
 #include <stdio.h>
-struct node
-{
-    int data;
-    struct node *next;
-};
-list_t *head = NULL;
-list_t *current = NULL;
 
-size_t print_list(const list_t *h);
 size_t print_list(const list_t *h)
 {
 	int count = 0;

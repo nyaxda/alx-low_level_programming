@@ -8,8 +8,9 @@ struct node
     int data;
     struct node *next;
 };
-struct node *head = NULL;
-struct node *current = NULL;
+typedef struct node list_t;
+list_t *head;
+list_t *current;
 
 size_t print_list(const list_t *h);
 
