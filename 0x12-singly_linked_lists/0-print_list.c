@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stlib.h>
 #include <string.h>
-#include "main.h"
+#include "lists.h"
 /**
  * print_list - printa all the elements of a list_t list
  *
@@ -18,9 +18,8 @@ size_t print_list(const list_t *h);
 	struct node *h = head;
 	while (h != NULL)
 	{
-		count++
+		count++;
 		h = h->next;
 	}
-
-	return (count)
+	return (count);
 }
