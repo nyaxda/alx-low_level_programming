@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stlib.h>
+#include <stdlib.h>
 #include <string.h>
 
 struct node

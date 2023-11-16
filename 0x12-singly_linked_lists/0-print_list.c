@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stlib.h>
 #include <string.h>
-#include "main.h"
+#include "lists.h"
 /**
  * print_list - printa all the elements of a list_t list
  *
