@@ -21,8 +21,14 @@ size_t print_list(const list_t *h)
 	const list_t *current = h;
 	while (current != NULL)
 	{
-		count++;
-		current = current->next;
-	}
+		if (current->str == NULL)
+		{
+			printf("[0] (nil)\n");
+		}
+		else
+		{
+			count++;
+			current = current->next;
+		}
 	return (count);
 }
