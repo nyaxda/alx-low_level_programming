@@ -11,15 +11,18 @@
  *
  * Return: number of nodes
 */
-size_t print_list(const list_t *h);
+#include "lists.h"
+#include <stdio.h>
+
+size_t print_list(const list_t *h)
 {
 	int count = 0;
 
-	struct node *h = head;
-	while (h != NULL)
+	const list_t *current = h;
+	while (current != NULL)
 	{
 		count++;
-		h = h->next;
+		current = current->next;
 	}
 	return (count);
 }
