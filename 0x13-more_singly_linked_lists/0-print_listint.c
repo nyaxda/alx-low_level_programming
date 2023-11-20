@@ -12,16 +12,17 @@
 size_t print_listint(const listint_t *h)
 {
 	size_t count = 0;
-	const listint_t *ptr = NULL;
+	listint_t *ptr = NULL;
 	ptr = h;
 	if (ptr == NULL)
 	{
-		printf ("0");
+		return (0);
 	}
 	else
 	{
 		while (ptr != NULL)
 		{
+			printf ("%zu", ptr->n)
 			count++;
 			ptr = ptr->next;
 		}
