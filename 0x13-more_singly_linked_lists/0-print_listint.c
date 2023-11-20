@@ -12,7 +12,7 @@
 size_t print_listint(const listint_t *h)
 {
 	size_t count = 0;
-	struct node listint_t *ptr = NULL;
+	struct listint_t *ptr = NULL;
 	ptr = h;
 	if (h = NULL)
 	{
