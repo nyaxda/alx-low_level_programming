@@ -14,16 +14,16 @@ size_t print_listint(const listint_t *h)
 	size_t count = 0;
 	struct listint_t *ptr = NULL;
 	ptr = h;
-	if (h = NULL)
+	if (ptr == NULL)
 	{
 		printf ("0");
 	}
 	else
 	{
-		while (h != NULL)
+		while (ptr != NULL)
 		{
 			count++;
-			h = h->next;
+			ptr = ptr->next;
 		}
 	}
 	return (count);
