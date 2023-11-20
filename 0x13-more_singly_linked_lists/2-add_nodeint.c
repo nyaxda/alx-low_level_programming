@@ -10,7 +10,7 @@
  *
  * Return: Address of the new element, NULL if it failed.
 */
-listint_t *add_nodeint(listing_t **head, const int n);
+listint_t *add_nodeint(listint_t **head, const int n)
 {
 	listint_t *ptr = malloc(sizeof(listint_t));
 	if (ptr == NULL)
