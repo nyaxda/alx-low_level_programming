@@ -5,7 +5,7 @@
 /**
  * listint_len - returns number of elements in a linked listint_t list.
  *
- * @h - elements of a listint_t list
+ * @h: elements of a listint_t list
  *
  * Return: number of elements.
 */
