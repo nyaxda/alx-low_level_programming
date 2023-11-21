@@ -23,7 +23,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	ptr = malloc(sizeof(listint_t));
 	current = *head;
 	ptr->n = n;
-	while(index < idx - 1 && current)
+	while (index < idx - 1 && current)
 	{
 		current = current->next;
 		index++;
