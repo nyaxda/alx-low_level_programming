@@ -15,7 +15,7 @@ size_t free_listint_safe(listint_t **h)
 
 	if (h == NULL || *h == NULL)
 	{
-		return count;
+		return (count);
 	}
 	while (*h != NULL)
 	{
