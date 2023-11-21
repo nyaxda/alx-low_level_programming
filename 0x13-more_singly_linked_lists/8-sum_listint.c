@@ -12,7 +12,7 @@
 int sum_listint(listint_t *head)
 {
 	listint_t *ptr;
-	int total;
+	int total = 0;
 
 	if (!head)
 	{
