@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * pop-listint - deletes the head node of a listint_t linked list.
+ * pop_listint - deletes the head node of a listint_t linked list.
  *
  * @head: head of the listint_t linked list.
  *
