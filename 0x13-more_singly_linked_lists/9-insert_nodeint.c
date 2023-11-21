@@ -40,12 +40,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		current = current->next;
 		index++;
 	}
-	if (current == NULL || current->next == NULL)
+	if (current == NULL)
 	{
 		free(ptr);
 		return (NULL);
 	}
-
+	if (current->next == NULL)
+	{
+		current->next = ptr;
+		return (ptr);
+	}
 	ptr->next = current->next;
 	current->next = ptr;
 
