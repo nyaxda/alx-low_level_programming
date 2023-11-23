@@ -35,14 +35,14 @@ char *_strcpy(char *dest, char *src)
 */
 unsigned int binary_to_uint(const char *b)
 {
-	char *buffer;
+	char *buffer, *endpointer;
 	unsigned int result;
 
 	if (b == NULL)
 	{
 		return (0);
 	}
-	buffer = malloc(strlen(b) + 1)
+	buffer = malloc(strlen(b) + 1);
 	if (buffer == NULL)
 	{
 		return (0);
@@ -56,8 +56,8 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 		buffer++;
 	}
-	result = (unsigned int)strtoul(b, &error, 2);
-	if (error == b)
+	result = (unsigned int)strtoul(b, &endpointer, 2);
+	if (endpointer == buffer)
 	{
 		return (0);
 	}
