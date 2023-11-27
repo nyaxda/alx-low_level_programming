@@ -41,7 +41,7 @@ void copier(int stat, int fd, char *filename, char mode);
  */
 int main(int argc, char *argv[])
 {
-	int src, dest, buffer = 1024, wrt, close_src, close_dest;
+	int src, dest, intread = 1024, wrt, close_src, close_dest;
 	unsigned int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buffer[1024];
 
@@ -54,12 +54,12 @@ int main(int argc, char *argv[])
 	copier(src, -1, argv[1], 'O');
 	dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
 	copier(dest, -1, argv[2], 'W');
-	while (buffer == 1024)
+	while (intread == 1024)
 	{
-		buffer = read(src, buffer, sizeof(buffer));
-		if (buffer == -1)
+		intread = read(src, buffer, sizeof(buffer));
+		if (intread == -1)
 			copier(-1, -1, argv[1], 'O');
-		wrt = write(dest, buffer, buffer);
+		wrt = write(dest, buffer, intread);
 		if (wrt == -1)
 			copier(-1, -1, argv[2], 'W');
 	}
