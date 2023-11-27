@@ -3,46 +3,59 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <string.h>
+#include <starg.h>
 #include "main.h"
 /**
  * exit_with_error_97 - Prints error message to stderr exits with code 97.
  * @message: The error message to be printed.
  * Return: void.
  */
-void exit_with_error_97(const char *message)
+void exit_with_error_97(const char *message, ...)
 {
-	dprintf(STDERR_FILENO, "%s\n", message);
-	exit(97);
+    va_list args;
+    va_start(args, message);
+    dprintf(STDERR_FILENO, message, args);
+    va_end(args);
+    exit(97);
 }
 /**
  * exit_with_error_98 - Prints error message to stderr exits with code 98.
  * @message: The error message to be printed.
  * Return: void.
  */
-void exit_with_error_98(const char *message)
+void exit_with_error_98(const char *message, ...)
 {
-	dprintf(STDERR_FILENO, "Error: %s\n", message);
-	exit(98);
+	va_list args;
+    va_start(args, message);
+    dprintf(STDERR_FILENO, message, args);
+    va_end(args);
+    exit(98);
 }
 /**
  * exit_with_error_99 - Prints error message to stderr exits with code 99.
  * @message: The error message to be printed.
  * Return: void.
  */
-void exit_with_error_99(const char *message)
+void exit_with_error_99(const char *message, ...)
 {
-	dprintf(STDERR_FILENO, "Error: %s\n", message);
-	exit(99);
+	va_list args;
+    va_start(args, message);
+    dprintf(STDERR_FILENO, message, args);
+    va_end(args);
+    exit(99);
 }
 /**
  * exit_with_error_100 - Prints error message to stderr exits with code 100.
  * @message: The error message to be printed.
  * Return: void.
  */
-void exit_with_error_100(const char *message)
+void exit_with_error_100(const char *message, ...)
 {
-	dprintf(STDERR_FILENO, "Error: %s\n", message);
-	exit(100);
+	va_list args;
+    va_start(args, message);
+    dprintf(STDERR_FILENO, message, args);
+    va_end(args);
+    exit(100);
 }
 /**
  * main - Copies the content of one file to another file.
