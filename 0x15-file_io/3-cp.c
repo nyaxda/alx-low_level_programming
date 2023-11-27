@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <string.h>
-#include <starg.h>
+#include <stdarg.h>
 #include "main.h"
 /**
  * exit_with_error_97 - Prints error message to stderr exits with code 97.
