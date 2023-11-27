@@ -1,102 +1,71 @@
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <fcntl.h>
-#include <string.h>
-#include <stdarg.h>
-#include "main.h"
+#include <unistd.h>
 /**
- * exit_with_error_97 - Prints error message to stderr exits with code 97.
- * @message: The error message to be printed.
- * Return: void.
- */
-void exit_with_error_97(const char *message, ...)
-{
-	va_list args;
-	va_start(args, message);
-	dprintf(STDERR_FILENO, message, args);
-	va_end(args);
-	exit(97);
-}
-/**
- * exit_with_error_98 - Prints error message to stderr exits with code 98.
- * @message: The error message to be printed.
- * Return: void.
- */
-void exit_with_error_98(const char *message, ...)
-{
-	va_list args;
-	va_start(args, message);
-	dprintf(STDERR_FILENO, message, args);
-	va_end(args);
-	exit(98);
-}
-/**
- * exit_with_error_99 - Prints error message to stderr exits with code 99.
- * @message: The error message to be printed.
- * Return: void.
- */
-void exit_with_error_99(const char *message, ...)
-{
-	va_list args;
-	va_start(args, message);
-	dprintf(STDERR_FILENO, message, args);
-	va_end(args);
-	exit(99);
-}
-/**
- * exit_with_error_100 - Prints error message to stderr exits with code 100.
- * @message: The error message to be printed.
- * Return: void.
- */
-void exit_with_error_100(const char *message, ...)
-{
-	va_list args;
-	va_start(args, message);
-	dprintf(STDERR_FILENO, message, args);
-	va_end(args);
-	exit(100);
-}
-/**
- * main - Copies the content of one file to another file.
- * @argc: Number of command-line arguments.
- * @argv: Array of command-line argument strings.
- * Return: 0 on success, or an exit code on failure.
+ * copier - checks if a file can be opened or closed
+ * @stat: file descriptor of the file to be opened
+ * @filename: name of the file
+ * @mode: closing or opening
+ * @fd: file descriptor
  *
- * This program takes two command-line arguments representing source and
- * destination files. It copies the content of the source file to the
- * destination file. If any error occurs during the process, it prints an
- * appropriate error message to stderr and exits with the corresponding
- * exit code.
+ * Return: void
+ */
+void copier(int stat, int fd, char *filename, char mode)
+{
+	if (mode == 'C' && stat == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+	else if (mode == 'O' && stat == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+		exit(98);
+	}
+	else if (mode == 'W' && stat == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
+		exit(99);
+	}
+}
+void copier(int stat, int fd, char *filename, char mode);
+/**
+ * main - copies the content of one file to another
+ * @argc: argument count
+ * @argv: arguments passed
+ *
+ * Return: 1 on success, exit otherwise
  */
 int main(int argc, char *argv[])
 {
-	int fd1, fd2;
+	int src, dest, n_read = 1024, wrote, close_src, close_dest;
+	unsigned int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buffer[1024];
-	ssize_t sourcebytes, destbytes;
 
 	if (argc != 3)
-		exit_with_error_97("Usage: cp file_from file_to");
-	fd1 = open(argv[1], O_RDONLY);
-	if (fd1 < 0)
-		exit_with_error_98("Error: Can't read from file %s\n", argv[1]);
-	fd2 = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
-	if (fd2 < 0)
-		exit_with_error_99("Error: Can't write to %s\n", argv[2]);
-	sourcebytes = read(fd1, buffer, sizeof(buffer));
-	while(sourcebytes)
 	{
-		destbytes = write(fd2, buffer, sourcebytes);
-		if (destbytes < 0)
-			exit_with_error_99("Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "%s", "Usage: cp file_from file_to\n");
+		exit(97);
 	}
-	if (sourcebytes < 0)
-		exit_with_error_98("Error: Can't read from file %s\n", argv[1]);
-	if (destbytes < 0)
-		 exit_with_error_99("Error: Can't write to %s\n", argv[2]);
-	if (close(fd1) < 0)
-		exit_with_error_100("Error: Can't close fd %d\n", fd1);
-	if (close(fd2) < 0)
-		exit_with_error_100("Error: Can't close fd %d\n", fd2);
+	src = open(argv[1], O_RDONLY);
+	copier(src, -1, argv[1], 'O');
+	dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
+	copier(dest, -1, argv[2], 'W');
+	while (n_read == 1024)
+	{
+		n_read = read(src, buffer, sizeof(buffer));
+		if (n_read == -1)
+			copier(-1, -1, argv[1], 'O');
+		wrote = write(dest, buffer, n_read);
+		if (wrote == -1)
+			copier(-1, -1, argv[2], 'W');
+	}
+	close_src = close(src);
+	copier(close_src, src, NULL, 'C');
+	close_dest = close(dest);
+	copier(close_dest, dest, NULL, 'C');
 	return (0);
 }
