@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include <errno.h>
 #include "main.h"
 /**
  * create_file - creates a file
