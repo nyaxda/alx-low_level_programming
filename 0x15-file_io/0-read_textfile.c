@@ -25,17 +25,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd < 0)
 		return (0);
 
-	c = (char*)malloc(letters * sizeof(char));
+	c = (char *)malloc(letters * sizeof(char));
 	if (c == NULL)
 	{
-		close (fd);
+		close(fd);
 		return (0);
 	}
 	size = read(fd, c, letters);
 	if (size < 0)
 	{
-		free (c);
-		close (fd);
+		free(c);
+		close(fd);
 		return (0);
 	}
 	c[size] = '\0';
@@ -43,12 +43,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	bytes = write(STDOUT_FILENO, c, size);
 	if (bytes != size)
 	{
-		free (c);
-		close (fd);
+		free(c);
+		close(fd);
 		return (0);
 	}
-	free (c);
-	close (fd);
+	free(c);
+	close(fd);
 
 	return (size);
 }
