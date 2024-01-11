@@ -10,7 +10,7 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	dlistint_t *tracker = head;
-	int counter = 0;
+	unsigned int counter = 0;
 
 	while (tracker != NULL && counter < index)
 	{
