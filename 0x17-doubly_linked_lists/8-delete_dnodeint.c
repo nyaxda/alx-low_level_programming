@@ -26,7 +26,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(current);
 		return (1);
 	}
-	while(current != NULL && tracker < index)
+	while (current != NULL && tracker < index)
 	{
 		previous = current;
 		current = current->next;
@@ -36,7 +36,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		return (-1);
 
 	previous->next = current->next;
-	if(current->next != NULL)
+	if (current->next != NULL)
 		current->next->prev = previous;
 
 	free(current);
