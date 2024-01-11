@@ -23,7 +23,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		*head = current->next;
 		if (current->next != NULL)
 			current->next->prev = NULL;
-		free_dlistint(current);
+		free(current);
 		return (1);
 	}
 	while(current != NULL && tracker < index)
@@ -39,6 +39,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if(current->next != NULL)
 		current->next->prev = previous;
 
-	free_dlistint(current);
+	free(current);
 	return (1);
 }
