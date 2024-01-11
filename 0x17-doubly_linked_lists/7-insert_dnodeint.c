@@ -13,22 +13,23 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *current, *new_node;
 	unsigned int tracker = 0;
+
 	if (h == NULL)
 		return (NULL);
 	if (idx == 0)
-		return add_dnodeint(h, n);
+		return (add_dnodeint(h, n));
 
 	current = *h;
-	while(current != NULL && tracker < idx)
-		{
-			current = current->next;
-			tracker++;
-		}
+	while (current != NULL && tracker < idx)
+	{
+		current = current->next;
+		tracker++;
+	}
 
 	if (tracker != idx)
 	{
 		if (tracker == idx - 1 && current == NULL)
-			return add_dnodeint_end(h, n);
+			return (add_dnodeint_end(h, n));
 		else
 			return (NULL);
 	}
