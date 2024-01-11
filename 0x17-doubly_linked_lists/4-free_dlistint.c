@@ -7,7 +7,7 @@
  * This function frees the memory allocated for each node in a doubly
  * linked list. It starts from the head of the list
  * and iteratively frees each node until the end.
- * 
+ *
  * Return: void.
  */
 void free_dlistint(dlistint_t *head)
